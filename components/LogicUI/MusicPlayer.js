@@ -13,6 +13,7 @@ export default function MusicPlayer() {
 			<a
 				href="https://play.google.com/store/apps/details?id=com.logicui.musicplayer"
 				target="_blank"
+				rel="noreferrer"
 			>
 				<Row>
 					<Col xs={6} sm={6} md={6} lg={{ span: 4, offset: 4 }}>
@@ -33,20 +34,20 @@ export default function MusicPlayer() {
 			</p>
 			<Row>
 				<Col sm={12} md={12} lg={{ span: 8, offset: 2 }}>
-					<Image src={ImageAddPlaylist} fluid />
+					<Image src={ImageAddPlaylist} />
 				</Col>
 			</Row>
 			<div className="Buffer--20px" />
 			<p className="Text--paragraph">
 				LMP supports a variety of delimiters for artist metadata. You
-				can use ' + ', ' / ' or ';' to seperate artist names and the app
-				will be able to allocate each track to the corresponding artists
-				properly. Take note of the blankspace at the front and back for
-				the first two delimiters.
+				can use &apos; + &apos;, &apos; / &apos; or &apos;;&apos; to
+				seperate artist names and the app will be able to allocate each
+				track to the corresponding artists properly. Take note of the
+				blankspace at the front and back for the first two delimiters.
 			</p>
 			<Row>
 				<Col sm={12} md={12} lg={{ span: 8, offset: 2 }}>
-					<Image src={ImageArtistMetadata} fluid />
+					<Image src={ImageArtistMetadata} />
 				</Col>
 			</Row>
 			<div className="Buffer--20px" />
@@ -59,7 +60,7 @@ export default function MusicPlayer() {
 			</p>
 			<Row>
 				<Col sm={12} md={12} lg={{ span: 8, offset: 2 }}>
-					<Image src={ImageSearch} fluid />
+					<Image src={ImageSearch} />
 				</Col>
 			</Row>
 			<div className="Buffer--20px" />
@@ -69,14 +70,18 @@ export default function MusicPlayer() {
 				features like sharing of audio files and editing of metadata are
 				excluded for a simpler experience. For editing of metadata, I
 				recommend using{" "}
-				<a href="https://www.mp3tag.de/en/" target="_blank">
+				<a
+					href="https://www.mp3tag.de/en/"
+					target="_blank"
+					rel="noreferrer"
+				>
 					Mp3tag
 				</a>
 				.
 			</p>
 			<Row>
 				<Col sm={12} md={12} lg={{ span: 8, offset: 2 }}>
-					<Image src={ImageMusicControl} fluid />
+					<Image src={ImageMusicControl} />
 				</Col>
 			</Row>
 		</>
