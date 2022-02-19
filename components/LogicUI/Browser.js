@@ -7,6 +7,7 @@ import ImageMenu from "../../assets/logicui/browser/menu.jpg";
 export default function Browser() {
 	return (
 		<>
+			<div className="Buffer--50px" />
 			<a
 				href="https://play.google.com/store/apps/details?id=com.logicui.tvbrowser"
 				target="_blank"
