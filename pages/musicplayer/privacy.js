@@ -1,8 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
-import MusicPlayer from "../../../components/LogicUI/MusicPlayer";
+import PrivacyPolicy from "../../components/LogicUI/PrivacyPolicy";
+import { app } from "./index";
 
-export default function LogicUIMusicPlayer() {
+export default function Privacy() {
 	return (
 		<>
 			<Head>
@@ -33,19 +34,10 @@ export default function LogicUIMusicPlayer() {
 					<p className="Text--header-article">{app.name}</p>
 					<div className="Buffer--10px" />
 					<p className="Text--subheader">{app.slogan}</p>
-					<MusicPlayer />
+					<PrivacyPolicy name={app.name} />
 					<div className="Buffer--50px" />
 				</div>
 			</div>
 		</>
 	);
 }
-
-const app = {
-	image: require("../../../assets/logicui/lmp/lmp_banner.jpg"),
-	codename: "musicplayer",
-	name: "LogicUI Music Player",
-	slogan: "Work Less, Listen More",
-	description:
-		"Music player designed to make maintaining playlists simple. LMP also supports a variety of artist metadata delimiters and flexible Chinese character search.",
-};
