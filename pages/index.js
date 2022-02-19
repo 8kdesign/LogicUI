@@ -118,6 +118,7 @@ function LatestContent() {
 				<a
 					href={item.link}
 					target="_blank"
+					rel="noreferrer"
 					style={{ textDecoration: "none" }}
 				>
 					<Card className="Card" bg="dark" text="light">
