@@ -17,7 +17,7 @@ export default function Privacy() {
 				<meta property="og:description" content={app.description} />
 				<meta
 					property="og:image"
-					content="https://firebasestorage.googleapis.com/v0/b/logicui-9667a.appspot.com/o/others%2Flmp_banner.jpg?alt=media&token=3084768a-975c-4cd0-89b2-68ec8ace5ead"
+					content="https://firebasestorage.googleapis.com/v0/b/logicui-9667a.appspot.com/o/others%2Frecorder_banner.png?alt=media&token=3bee5e17-c8ea-4528-b3c4-5611eaf03c16"
 				/>
 			</Head>
 			<div className="Image--banner">

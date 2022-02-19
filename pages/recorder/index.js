@@ -1,9 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
-import PrivacyPolicy from "../../components/LogicUI/PrivacyPolicy";
-import { app } from "./index";
+import Recorder from "../../components/LogicUI/Recorder";
 
-export default function Privacy() {
+export default function AudioRecorder() {
 	return (
 		<>
 			<Head>
@@ -17,7 +16,7 @@ export default function Privacy() {
 				<meta property="og:description" content={app.description} />
 				<meta
 					property="og:image"
-					content="https://firebasestorage.googleapis.com/v0/b/logicui-9667a.appspot.com/o/others%2Flmp_banner.jpg?alt=media&token=3084768a-975c-4cd0-89b2-68ec8ace5ead"
+					content="https://firebasestorage.googleapis.com/v0/b/logicui-9667a.appspot.com/o/others%2Frecorder_banner.png?alt=media&token=3bee5e17-c8ea-4528-b3c4-5611eaf03c16"
 				/>
 			</Head>
 			<div className="Image--banner">
@@ -35,10 +34,19 @@ export default function Privacy() {
 					<p className="Text--header-article">{app.name}</p>
 					<div className="Buffer--10px" />
 					<p className="Text--subheader">{app.slogan}</p>
-					<PrivacyPolicy name={app.name} />
+					<Recorder />
 					<div className="Buffer--50px" />
 				</div>
 			</div>
 		</>
 	);
 }
+
+export const app = {
+	image: require("../../assets/logicui/recorder/banner.png"),
+	codename: "recorder",
+	name: "LogicUI Audio Recorder",
+	slogan: "Record With Ease",
+	description:
+		"Audio recording app that can be used with Bluetooth earphones, with optimizations that brings greater conveniences.",
+};
