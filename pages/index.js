@@ -29,7 +29,7 @@ export default function LogicUI() {
 				/>
 				<meta
 					property="og:image"
-					content="https://firebasestorage.googleapis.com/v0/b/logicui-9667a.appspot.com/o/others%2Flogicui_banner.jpg?alt=media&token=273ba1e6-7d61-457f-82cf-d5506c10f7a7"
+					content="https://firebasestorage.googleapis.com/v0/b/logicui-9667a.appspot.com/o/others%2Flogicui_banner.png?alt=media&token=506832a0-2425-4125-b0b8-13e3e8266dff"
 				/>
 			</Head>
 			<div className="Container--background Color--home">

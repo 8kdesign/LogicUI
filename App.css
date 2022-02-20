@@ -20,9 +20,6 @@
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 }
 
 .Container--center {
@@ -69,16 +66,6 @@
 }
 
 /* Text */
-
-.Text--menu {
-	color: white;
-	font-size: 20px;
-	margin: 0px;
-}
-
-.Text--menu:hover {
-	color: gray;
-}
 
 .Text--header {
 	font-size: 35px;
@@ -187,5 +174,14 @@
 		135deg,
 		rgba(255, 224, 122, 1) 45%,
 		rgba(255, 115, 167, 1) 100%
+	);
+}
+
+.Color--screenshot {
+	background: rgb(255, 227, 135);
+	background: linear-gradient(
+		180deg,
+		rgba(255, 227, 135, 1) 20%,
+		rgba(255, 198, 53, 1) 100%
 	);
 }
