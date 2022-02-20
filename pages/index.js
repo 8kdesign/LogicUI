@@ -35,7 +35,7 @@ export default function LogicUI() {
 			<div className="Container--background Color--home">
 				<Image
 					src={BannerImage}
-					layout="fixed"
+					layout="fill"
 					objectFit="cover"
 					priority
 				/>
