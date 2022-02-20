@@ -99,7 +99,9 @@ export default function ScreenshotFramer() {
 					}}
 				>
 					<div className="Buffer--50px" />
-					<p className="Text--header-article">Clear Background</p>
+					<p className="Text--header-article">
+						Clear Background (Default)
+					</p>
 					<div className="Buffer--20px" />
 					<div style={{ position: "relative", height: 150 }}>
 						<Image
