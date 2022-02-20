@@ -2,7 +2,7 @@ import Image from "next/image";
 import Head from "next/head";
 
 import { Col, Container, Row } from "react-bootstrap";
-import ImageMain from "../../assets/logicui/screenshot/Main.png";
+import ImageMain from "../../assets/logicui/screenshot/main.png";
 import ImageTransparent from "../../assets/logicui/screenshot/transparent.png";
 import ImageSize1 from "../../assets/logicui/screenshot/1.jpg";
 import ImageSize2 from "../../assets/logicui/screenshot/2.jpg";
