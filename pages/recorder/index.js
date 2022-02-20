@@ -122,7 +122,7 @@ export default function AudioRecorder() {
 						</Col>
 						<Col
 							sm={12}
-							md={6}
+							md={12}
 							lg={6}
 							style={{
 								display: "flex",

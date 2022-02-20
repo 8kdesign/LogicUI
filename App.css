@@ -209,3 +209,12 @@
 		rgba(33, 14, 18, 1) 70%
 	);
 }
+
+.Color--camera {
+	background: rgb(80, 80, 80);
+	background: linear-gradient(
+		117deg,
+		rgba(80, 80, 80, 1) 25%,
+		rgba(60, 60, 60, 1) 70%
+	);
+}

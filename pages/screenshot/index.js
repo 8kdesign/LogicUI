@@ -175,7 +175,7 @@ export default function ScreenshotFramer() {
 								prototypes.
 							</p>
 						</Col>
-						<Col sm={12} md={6} lg={6}>
+						<Col sm={12} md={12} lg={6}>
 							<Image src={ImageGif} />
 						</Col>
 					</Row>
