@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import PrivacyPolicy from "../../components/LogicUI/PrivacyPolicy";
+import PrivacyPolicy from "../../components/PrivacyPolicy";
 import { app } from "./index";
 
 export default function Privacy() {

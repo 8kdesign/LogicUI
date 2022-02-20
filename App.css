@@ -218,3 +218,12 @@
 		rgba(60, 60, 60, 1) 70%
 	);
 }
+
+.Color--browser {
+	background: rgb(32, 86, 108);
+	background: linear-gradient(
+		117deg,
+		rgba(32, 86, 108, 1) 20%,
+		rgba(154, 37, 37, 1) 80%
+	);
+}
