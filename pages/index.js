@@ -1,89 +1,69 @@
 import Head from "next/head";
-import { Col, Row, Card, Button } from "react-bootstrap";
 import Image from "next/image";
-import Link from "next/link";
-import ImageBanner from "../assets/logo_banner.png";
+import { Card, Col, Container, Row } from "react-bootstrap";
+import BannerImage from "../assets/home_banner_graphics.png";
 import ImageLMPLogo from "../assets/logicui/lmp/lmp_logo.jpg";
 import ImageScreenshotLogo from "../assets/logicui/screenshot/screenshot_logo.jpg";
+import ImageRecorderLogo from "../assets/logicui/recorder/recorder_logo.jpg";
+import ImageCameraLogo from "../assets/logicui/camera/camera_logo.jpg";
+import ImageTVBrowserLogo from "../assets/logicui/browser/browser_logo.jpg";
+import Link from "next/link";
 
-export default function Home() {
+export default function LogicUI() {
 	return (
 		<>
 			<Head>
-				<title>8K | LogicUI</title>
+				<title>LogicUI</title>
 				<meta
 					name="viewport"
 					content="initial-scale=1.0, width=device-width"
 				/>
-				<meta property="og:title" content="8K | LogicUI" />
-				<meta property="description" content="Official blog by 8K" />
-				<meta property="og:description" content="Official blog by 8K" />
+				<meta property="og:title" content="LogicUI" />
+				<meta
+					property="description"
+					content="LogicUI apps and concepts."
+				/>
+				<meta
+					property="og:description"
+					content="LogicUI apps and concepts."
+				/>
 				<meta
 					property="og:image"
-					content="https://firebasestorage.googleapis.com/v0/b/logicui-9667a.appspot.com/o/others%2Flogo_banner.png?alt=media&token=8522ecea-b68a-4ced-a4df-538c1d8a92db"
+					content="https://firebasestorage.googleapis.com/v0/b/logicui-9667a.appspot.com/o/others%2Flogicui_banner.jpg?alt=media&token=273ba1e6-7d61-457f-82cf-d5506c10f7a7"
 				/>
 			</Head>
-			<div className="Image--banner">
-				<Image src={ImageBanner} layout="fill" objectFit="cover" />
+			<div className="Container--background Color--home">
+				<Image src={BannerImage} layout="fixed" objectFit="cover" />
 			</div>
-			<div className="Line--horizontal"></div>
-			<div className="Container--center">
-				<div className="Container--scale">
-					<div className="Buffer--20px" />
-					<div className="Container--space-between">
-						<p className="Text--header">Latest Apps</p>
-						<Link href={"/logicui"}>
-							<Button variant="outline-dark">View More</Button>
-						</Link>
-					</div>
-					<div className="Buffer--20px" />
-					<Row>
-						<LatestApps />
-					</Row>
-					<div className="Buffer--20px" />
-				</div>
-			</div>
-			<div
-				className="Container--center"
-				style={{ backgroundColor: "#111111" }}
-			>
-				<div className="Container--scale">
-					<div className="Buffer--20px" />
-					<div className="Container--space-between">
-						<p className="Text--header-light">Latest Content</p>
-						<Button
-							variant="outline-light"
-							onClick={() =>
-								window.open(
-									"https://www.youtube.com/channel/UCNXGgdQeUBfkZTJCYLcGLfA",
-									"_blank"
-								)
-							}
-						>
-							View More
-						</Button>
-					</div>
-					<div className="Buffer--20px" />
-					<Row>
-						<LatestContent />
-					</Row>
-					<div className="Buffer--20px" />
-				</div>
-			</div>
+			<div className="Buffer--50px" />
+			<Container className="Container--center">
+				<p className="Text--header">Apps by LogicUI</p>
+				<div className="Buffer--20px" />
+				<Row style={{ width: "100%" }}>
+					<Content />
+				</Row>
+			</Container>
+			<div className="Buffer--50px" />
 		</>
 	);
 }
 
-function LatestApps() {
+function Content() {
 	const itemArray = [];
-	latestApps.forEach((item) => {
+	apps.forEach((item) => {
 		itemArray.push(
-			<Col sm={12} lg={6} key={item.image}>
+			<Col
+				sm={12}
+				md={6}
+				lg={4}
+				key={item.codename}
+				style={{ display: "flex", flexDirection: "column" }}
+			>
 				<Link href={"/" + item.codename}>
 					<Card
 						className="Card"
 						bg="light"
-						style={{ cursor: "pointer" }}
+						style={{ cursor: "pointer", flex: 1 }}
 					>
 						<Card.Body>
 							<div className="Container--row">
@@ -110,37 +90,12 @@ function LatestApps() {
 	return itemArray;
 }
 
-function LatestContent() {
-	const itemArray = [];
-	latestContent.forEach((item) =>
-		itemArray.push(
-			<Col sm={12} md={6} lg={4} key={item.link}>
-				<a
-					href={item.link}
-					target="_blank"
-					rel="noreferrer"
-					style={{ textDecoration: "none" }}
-				>
-					<Card className="Card" bg="dark" text="light">
-						<Card.Img variant="top" src={item.image} />
-						<Card.Body>
-							<Card.Title>{item.title}</Card.Title>
-							<Card.Text>{item.description}</Card.Text>
-						</Card.Body>
-					</Card>
-				</a>
-				<div className="Buffer--20px" />
-			</Col>
-		)
-	);
-	return itemArray;
-}
-
-const latestApps = [
+const apps = [
 	{
 		image: ImageLMPLogo,
 		codename: "musicplayer",
 		name: "LogicUI Music Player",
+		status: "success",
 		description:
 			"Music player designed to make maintaining playlists simple. LMP also supports a variety of artist metadata delimiters and flexible Chinese character search.",
 	},
@@ -148,51 +103,32 @@ const latestApps = [
 		image: ImageScreenshotLogo,
 		codename: "screenshot",
 		name: "Screenshot Framer",
+		status: "success",
 		description:
 			"Add a frame around your screenshot the smart way! Screenshot Framer intelligently adds a frame around your screenshots without skewing or cropping it.",
 	},
-];
-
-const latestContent = [
 	{
-		link: "https://youtu.be/N1ylduD5n5s",
-		image: "https://img.youtube.com/vi/N1ylduD5n5s/maxresdefault.jpg",
-		title: "OPPO Reno7 Pro Review",
+		image: ImageRecorderLogo,
+		codename: "recorder",
+		name: "LogicUI Recorder",
+		status: "success",
 		description:
-			"A well rounded device that satisfies the needs of most users.",
+			"Audio recorder that makes recording audio with Bluetooth microphone/headphones a breeze on Android devices.",
 	},
 	{
-		link: "https://youtu.be/XP9SBccbNNw",
-		image: "https://img.youtube.com/vi/XP9SBccbNNw/maxresdefault.jpg",
-		title: "POCO X3 GT Review",
+		image: ImageCameraLogo,
+		codename: "camera",
+		name: "LogicUI Camera Concept",
+		status: "danger",
 		description:
-			"An in-depth look at POCO's latest device in the X3 series.",
+			"Camera app designed for one-handed use. Includes optimizations for single-hand control of focus and exposure, as well as triggering of shutter with a smile.",
 	},
 	{
-		link: "https://youtu.be/8_sCbDhV7Ng",
-		image: "https://img.youtube.com/vi/8_sCbDhV7Ng/maxresdefault.jpg",
-		title: "POCO M3 Pro Review",
+		image: ImageTVBrowserLogo,
+		codename: "browser",
+		name: "LogicUI TV Browser",
+		status: "warning",
 		description:
-			"POCO's new budget device is here. But is it worth your money?",
-	},
-	{
-		link: "https://youtu.be/MBFU7gva_KE",
-		image: "https://img.youtube.com/vi/MBFU7gva_KE/maxresdefault.jpg",
-		title: "OPPO Find X3 Pro Review",
-		description:
-			"Controversial design. Cool new innovations. Solid experience.",
-	},
-	{
-		link: "https://youtu.be/3C4ikAkyONc",
-		image: "https://img.youtube.com/vi/3C4ikAkyONc/maxresdefault.jpg",
-		title: "Mi Band 6 Review",
-		description: "The best budget fitness tracker just got even better!",
-	},
-	{
-		link: "https://youtu.be/unkPpp72xzU",
-		image: "https://img.youtube.com/vi/unkPpp72xzU/maxresdefault.jpg",
-		title: "POCO X3 Pro Review",
-		description:
-			"The new flagship killer is here! Introducing the POCO X3 Pro",
+			"TV Browser app is built to address the lack of a browser on Android TV's play store. Designed to be used with the D-pad on remotes.",
 	},
 ];

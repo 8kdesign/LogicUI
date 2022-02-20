@@ -1,60 +1,18 @@
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Link from "next/link";
 import Image from "next/image";
-import ImageLogo from "../assets/inverted_logo.png";
-import { useState, useEffect } from "react";
-import { List } from "react-bootstrap-icons";
+import ImageLogo from "../assets/Logo.png";
 
-export default function AppBar({ setShowOffCanvas }) {
-	const [width, setWidth] = useState(0);
-
-	useEffect(() => {
-		if (typeof window === "undefined") return;
-		function adjustWidth() {
-			setWidth(window.innerWidth);
-			setShowOffCanvas(false);
-		}
-		adjustWidth();
-		window.addEventListener("resize", adjustWidth);
-		return () => window.removeEventListener("resize", adjustWidth);
-	}, []);
-
+export default function AppBar() {
 	return (
 		<div className="Container--navbar">
-			<Navbar bg="dark" variant="dark">
-				<Container>
-					<div style={{ cursor: "pointer" }}>
-						<Link href="/">
-							<Image
-								src={ImageLogo}
-								className="Image--logo"
-								height={40}
-								width={40}
-							/>
-						</Link>
-					</div>
-					{MenuItems(width, setShowOffCanvas)}
-				</Container>
-			</Navbar>
+			<Container>
+				<div style={{ cursor: "pointer" }}>
+					<Link href="/">
+						<Image src={ImageLogo} height={30} width={81} />
+					</Link>
+				</div>
+			</Container>
 		</div>
-	);
-}
-
-function MenuItems(width, setShowOffCanvas) {
-	if (width < 700) {
-		return (
-			<List
-				color="white"
-				size={30}
-				onClick={() => setShowOffCanvas(true)}
-			/>
-		);
-	}
-	return (
-		<Nav>
-			<Nav.Link href="/logicui">LogicUI Apps</Nav.Link>
-			<div className="Line--menu" />
-			<Nav.Link href="/reviews">Reviews</Nav.Link>
-		</Nav>
 	);
 }

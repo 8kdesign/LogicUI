@@ -5,6 +5,26 @@
 
 /* Containers */
 
+.Container--background {
+	display: flex;
+	width: 100%;
+	height: 700px;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	position: relative;
+}
+
+.Container--overlay {
+	display: flex;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
 .Container--center {
 	display: flex;
 	width: 100%;
@@ -33,10 +53,15 @@
 }
 
 .Container--navbar {
+	display: flex;
+	flex-direction: column;
 	width: 100%;
+	height: 60px;
 	position: fixed;
 	top: 0px;
 	z-index: 5;
+	justify-content: center;
+	background-color: white;
 }
 
 .Container--content {
@@ -85,11 +110,6 @@
 }
 
 /* Image */
-
-.Image--logo {
-	height: 40px;
-	width: 40px;
-}
 
 .Image--banner {
 	position: relative;
@@ -157,4 +177,15 @@
 
 .Rotate--180 {
 	rotate: 180;
+}
+
+/* Colors */
+
+.Color--home {
+	background: rgb(255, 224, 122);
+	background: linear-gradient(
+		135deg,
+		rgba(255, 224, 122, 1) 45%,
+		rgba(255, 115, 167, 1) 100%
+	);
 }
