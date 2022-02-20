@@ -28,7 +28,10 @@ export default function ScreenshotFramer() {
 					content="https://firebasestorage.googleapis.com/v0/b/logicui-9667a.appspot.com/o/others%2Fscreenshot_banner.jpg?alt=media&token=af514080-1b13-4033-a4c6-de3f8e373412"
 				/>
 			</Head>
-			<div className="Container--background Color--screenshot">
+			<div
+				className="Container--background Color--screenshot"
+				style={{ height: "auto" }}
+			>
 				<Container className="Container--center">
 					<div className="Buffer--50px" />
 					<div className="Buffer--50px" />
@@ -38,13 +41,14 @@ export default function ScreenshotFramer() {
 					<p className="Text--paragraph" style={{ padding: 0 }}>
 						{app.slogan}
 					</p>
-					<div style={{ height: 500 }}>
+					<div style={{ maxHeight: 500 }}>
 						<Image
 							src={ImageMain}
 							layout="intrinsic"
 							objectFit="cover"
 						/>
 					</div>
+					<div className="Buffer--50px" />
 				</Container>
 			</div>
 			<Container className="Container--center">
