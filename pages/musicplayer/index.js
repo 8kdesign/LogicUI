@@ -32,13 +32,21 @@ export default function LogicUIMusicPlayer() {
 					<div className="Buffer--50px" />
 					<p
 						className="Text--header-article"
-						style={{ padding: 0, color: "white" }}
+						style={{
+							padding: 0,
+							color: "white",
+							textAlign: "center",
+						}}
 					>
 						{app.name}
 					</p>
 					<p
 						className="Text--paragraph"
-						style={{ padding: 0, color: "white" }}
+						style={{
+							padding: 0,
+							color: "white",
+							textAlign: "center",
+						}}
 					>
 						{app.slogan}
 					</p>

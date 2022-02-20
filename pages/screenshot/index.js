@@ -35,10 +35,16 @@ export default function ScreenshotFramer() {
 				<Container className="Container--center">
 					<div className="Buffer--50px" />
 					<div className="Buffer--50px" />
-					<p className="Text--header-article" style={{ padding: 0 }}>
+					<p
+						className="Text--header-article"
+						style={{ padding: 0, textAlign: "center" }}
+					>
 						{app.name}
 					</p>
-					<p className="Text--paragraph" style={{ padding: 0 }}>
+					<p
+						className="Text--paragraph"
+						style={{ padding: 0, textAlign: "center" }}
+					>
 						{app.slogan}
 					</p>
 					<div style={{ maxHeight: 500 }}>
