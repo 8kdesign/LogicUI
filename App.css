@@ -200,3 +200,12 @@
 		rgba(255, 82, 117, 1) 90%
 	);
 }
+
+.Color--recorder {
+	background: rgb(187, 79, 79);
+	background: radial-gradient(
+		circle,
+		rgba(187, 79, 79, 1) 20%,
+		rgba(33, 14, 18, 1) 70%
+	);
+}
