@@ -152,7 +152,6 @@ export default function LogicUICamera() {
 }
 
 export const app = {
-	image: require("../../assets/logicui/camera/banner.jpg"),
 	codename: "camera",
 	name: "LogicUI Camera Concept",
 	slogan: "One-Handed Convenience",

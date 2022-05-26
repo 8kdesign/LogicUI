@@ -194,7 +194,6 @@ export default function AudioRecorder() {
 }
 
 export const app = {
-	image: require("../../assets/logicui/recorder/banner.png"),
 	codename: "recorder",
 	name: "LogicUI Audio Recorder",
 	slogan: "Record With Ease",
