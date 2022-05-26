@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Card, Col, Container, Row } from "react-bootstrap";
-import BannerImage from "../assets/home_banner_graphics.png";
+import BannerImage from "../assets/home_banner_graphics.webp";
 import ImageLMPLogo from "../assets/logicui/lmp/lmp_logo.jpg";
 import ImageScreenshotLogo from "../assets/logicui/screenshot/screenshot_logo.jpg";
 import ImageRecorderLogo from "../assets/logicui/recorder/recorder_logo.jpg";
@@ -65,28 +65,27 @@ function Content() {
 				style={{ display: "flex", flexDirection: "column" }}
 			>
 				<Link href={"/" + item.codename}>
-					<Card
-						className="Card"
-						bg="light"
-						style={{ cursor: "pointer", flex: 1 }}
-					>
-						<Card.Body>
-							<div className="Container--row">
-								<Image
-									src={item.image}
-									className="Image--app-icon"
-									height={40}
-									width={40}
-								/>
-								<Card.Title style={{ paddingLeft: 10 }}>
-									{item.name}
-								</Card.Title>
+					<div className="Card">
+						<div className="Container--row">
+							<Image
+								src={item.image}
+								className="Image--app-icon"
+								height={100}
+								width={100}
+							/>
+							<div
+								style={{
+									flexDirection: "column",
+									marginLeft: 20,
+								}}
+							>
+								<p className="Text--subheader">{item.name}</p>
+								<p className="Text--paragraph">
+									{item.description}
+								</p>
 							</div>
-							<Card.Text style={{ paddingTop: 10 }}>
-								{item.description}
-							</Card.Text>
-						</Card.Body>
-					</Card>
+						</div>
+					</div>
 				</Link>
 				<div className="Buffer--20px" />
 			</Col>

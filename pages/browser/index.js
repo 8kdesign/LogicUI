@@ -2,7 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import { Col, Container, Row } from "react-bootstrap";
 
-import ImageSurf from "../../assets/logicui/browser/surf.png";
+import ImageSurf from "../../assets/logicui/browser/surf.webp";
+import ImagePlayStore from "../../assets/google-play-badge.png";
 
 export default function Browser() {
 	return (
@@ -60,18 +61,31 @@ export default function Browser() {
 				<div className="Buffer--50px" />
 				<div className="Buffer--50px" />
 				<p
-					className="Text--subheader"
+					className="Text--header"
 					style={{ padding: 0, textAlign: "center" }}
 				>
-					Due to challenges in getting approval, this app is only
-					available on request.
+					Get LogicUI TV Browser on Play Store now!
 				</p>
-				<p
-					className="Text--paragraph"
-					style={{ padding: 0, textAlign: "center" }}
+				<div className="Buffer--20px" />
+				<a
+					href="https://play.google.com/store/apps/details?id=com.logicui.tvbrowser2"
+					target="_blank"
+					rel="noreferrer"
 				>
-					Please contact 8kdeveloper@gmail.com.
-				</p>
+					<Row>
+						<Col
+							xs={{ span: 6, offset: 3 }}
+							sm={{ span: 6, offset: 3 }}
+							md={{ span: 6, offset: 3 }}
+							lg={{ span: 4, offset: 4 }}
+						>
+							<Image
+								src={ImagePlayStore}
+								className="Image--playstore"
+							/>
+						</Col>
+					</Row>
+				</a>
 				<div className="Buffer--50px" />
 				<div className="Buffer--50px" />
 			</Container>
@@ -80,7 +94,6 @@ export default function Browser() {
 }
 
 export const app = {
-	image: require("../../assets/logicui/browser/browser_banner.jpg"),
 	codename: "browser",
 	name: "LogicUI TV Browser",
 	slogan: "Surf Web on Android TV",

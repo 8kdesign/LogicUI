@@ -96,10 +96,7 @@ export default function LogicUICamera() {
 				<div className="Buffer--50px" />
 				<Row>
 					<Col sm={12} md={6} lg={6}>
-						<p
-							className="Text--header-article"
-							style={{ padding: 0 }}
-						>
+						<p className="Text--subheader" style={{ padding: 0 }}>
 							One-Handed Focus
 						</p>
 						<div className="Buffer--20px" />
@@ -116,10 +113,7 @@ export default function LogicUICamera() {
 						<Image src={ImageFocus} />
 					</Col>
 					<Col sm={12} md={6} lg={6}>
-						<p
-							className="Text--header-article"
-							style={{ padding: 0 }}
-						>
+						<p className="Text--subheader" style={{ padding: 0 }}>
 							One-Handed Zoom
 						</p>
 						<div className="Buffer--20px" />
@@ -134,10 +128,7 @@ export default function LogicUICamera() {
 						<Image src={ImageZoom} />
 					</Col>
 					<Col sm={12} md={6} lg={6}>
-						<p
-							className="Text--header-article"
-							style={{ padding: 0 }}
-						>
+						<p className="Text--subheader" style={{ padding: 0 }}>
 							Smile Selfie
 						</p>
 						<div className="Buffer--20px" />

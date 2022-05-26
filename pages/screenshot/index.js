@@ -188,7 +188,6 @@ export default function ScreenshotFramer() {
 }
 
 export const app = {
-	image: require("../../assets/logicui/screenshot/screenshot_banner.jpg"),
 	codename: "screenshot",
 	name: "Screenshot Framer",
 	slogan: "Frame Your Screenshots Intelligently",

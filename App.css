@@ -3,6 +3,10 @@
 	--line-dark: #616161;
 }
 
+p {
+	margin: 0px;
+}
+
 /* Containers */
 
 .Container--background {
@@ -93,12 +97,12 @@
 }
 
 .Text--subheader {
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: 500;
 }
 
 .Text--paragraph {
-	font-size: 20px;
+	font-size: 17px;
 	line-height: 1.7;
 }
 
@@ -163,6 +167,13 @@
 	width: 50px;
 }
 
+.Card {
+	background: rgb(247, 247, 247);
+	padding: 20px;
+	cursor: pointer;
+	flex: 1;
+}
+
 .Card:hover {
 	transform: scale(1.01);
 	opacity: 0.9;
@@ -175,20 +186,20 @@
 /* Colors */
 
 .Color--home {
-	background: rgb(255, 224, 122);
+	background: rgb(255, 208, 55);
 	background: linear-gradient(
 		135deg,
-		rgba(255, 224, 122, 1) 45%,
+		rgba(255, 208, 55, 1) 45%,
 		rgba(255, 115, 167, 1) 100%
 	);
 }
 
 .Color--screenshot {
-	background: rgb(255, 227, 135);
+	background: rgb(255, 198, 53);
 	background: linear-gradient(
 		180deg,
-		rgba(255, 227, 135, 1) 20%,
-		rgba(255, 198, 53, 1) 100%
+		rgba(255, 198, 53, 1) 20%,
+		rgb(255, 154, 60) 100%
 	);
 }
 

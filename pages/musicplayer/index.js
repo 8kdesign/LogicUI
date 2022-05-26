@@ -2,9 +2,9 @@ import Head from "next/head";
 import Image from "next/image";
 import { Col, Container, Row } from "react-bootstrap";
 
-import ImageMain from "../../assets/logicui/lmp/main.png";
+import ImageMain from "../../assets/logicui/lmp/main.webp";
 import ImagePlayStore from "../../assets/google-play-badge.png";
-import ImageMusicControl from "../../assets/logicui/lmp/music_control.png";
+import ImageMusicControl from "../../assets/logicui/lmp/music_control.webp";
 
 export default function LogicUIMusicPlayer() {
 	return (
@@ -173,7 +173,6 @@ export default function LogicUIMusicPlayer() {
 }
 
 export const app = {
-	image: require("../../assets/logicui/lmp/lmp_banner.jpg"),
 	codename: "musicplayer",
 	name: "LogicUI Music Player",
 	slogan: "Work Less, Listen More",
