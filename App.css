@@ -115,8 +115,6 @@ p {
 }
 
 .Image--app-icon {
-	height: 40px;
-	width: auto;
 	border-radius: 5px;
 	border-width: 0.5px;
 	border-style: solid;

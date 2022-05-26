@@ -66,17 +66,23 @@ function Content() {
 			>
 				<Link href={"/" + item.codename}>
 					<div className="Card">
-						<div className="Container--row">
+						<div
+							className="Container--row"
+							style={{ alignItems: "start" }}
+						>
 							<Image
 								src={item.image}
+								height={40}
+								width={40}
 								className="Image--app-icon"
-								height={100}
-								width={100}
+								objectFit="fill"
 							/>
+
 							<div
 								style={{
 									flexDirection: "column",
 									marginLeft: 20,
+									flex: 1,
 								}}
 							>
 								<p className="Text--subheader">{item.name}</p>
