@@ -54,8 +54,10 @@ export default function AppHeader({ app }) {
 					{app.description}
 				</p>
 				<div style={{ maxWidth: 200 }}>
-					<Link href={app.link}>
-						<Image className="Toggle" src={ImagePlayStore} />
+					<Link href={app.link} passHref>
+						<a target="_blank">
+							<Image className="Toggle" src={ImagePlayStore} />
+						</a>
 					</Link>
 				</div>
 			</Col>
