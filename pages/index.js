@@ -87,21 +87,31 @@ function Content() {
 								className="Contianer--column"
 								style={{ marginLeft: 15 }}
 							>
-								<p style={{ fontSize: 17, width: "100%" }}>
-									{app.name + "	"}
+								<p
+									style={{
+										fontSize: 21,
+										width: "100%",
+										fontWeight: 500,
+									}}
+								>
+									{app.name}
+								</p>
+								<div>
 									{app.installs !== undefined ? (
 										<Badge
 											bg="warning"
 											text="dark"
 											style={{
+												fontSize: 13,
 												fontWeight: 500,
 												borderRadius: 20,
+												marginBottom: 10,
 											}}
 										>
 											{app.installs}
 										</Badge>
 									) : null}
-								</p>
+								</div>
 								<p
 									style={{
 										fontSize: 17,
@@ -128,8 +138,8 @@ export const apps = [
 		codename: "browser",
 		name: "TV Browser",
 		description:
-			"TV Browser app is built to address the lack of a browser on Android TV's play store. Supports controlling from your mobile device.",
-		installs: "> 10K Installs",
+			"TV Browser app is built to address the lack of a good free browser on Android TV's play store. Supports controlling from your phone.",
+		installs: "10K+ Installs",
 		link: "https://play.google.com/store/apps/details?id=com.logicui.tvbrowser2",
 	},
 	{
@@ -138,8 +148,8 @@ export const apps = [
 		codename: "screenshot",
 		name: "Screenshot Framer",
 		description:
-			"Add a frame around your screenshot the smart way! Screenshot Framer intelligently adds a frame around your screenshots without skewing or cropping it.",
-		installs: "> 500 Installs",
+			"Add a frame around your screenshot the easy way! Screenshot Framer intelligently adds a frame around your screenshots without skewing or cropping it.",
+		installs: "500+ Installs",
 		link: "https://play.google.com/store/apps/details?id=com.logicui.screenshotframer",
 	},
 	{
