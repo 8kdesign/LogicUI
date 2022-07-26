@@ -40,7 +40,7 @@ export default function LogicUI() {
 					content="https://firebasestorage.googleapis.com/v0/b/logicui-9667a.appspot.com/o/others%2Flogicui_banner.png?alt=media&token=506832a0-2425-4125-b0b8-13e3e8266dff"
 				/>
 			</Head>
-			<Container style={{ padding: 30 }}>
+			<Container>
 				<div className="Container--space-between">
 					<p style={{ marginLeft: 20, fontSize: 21 }}>Android Apps</p>
 				</div>
