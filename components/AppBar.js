@@ -1,7 +1,5 @@
 import { Container } from "react-bootstrap";
 import Link from "next/link";
-import Image from "next/image";
-import ImageLogo from "../assets/Logo.png";
 
 export default function AppBar() {
 	return (
@@ -9,7 +7,16 @@ export default function AppBar() {
 			<Container>
 				<div style={{ cursor: "pointer" }}>
 					<Link href="/">
-						<Image src={ImageLogo} height={30} width={81} />
+						<p
+							style={{
+								fontSize: 21,
+								fontWeight: 400,
+								color: "#aaaaaa",
+								userSelect: "none",
+							}}
+						>
+							<b style={{ color: "#3b3b3b" }}>Logic </b>UI
+						</p>
 					</Link>
 				</div>
 			</Container>

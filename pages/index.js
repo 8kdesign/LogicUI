@@ -1,13 +1,21 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Card, Col, Container, Row } from "react-bootstrap";
-import BannerImage from "../assets/home_banner_graphics.webp";
-import ImageLMPLogo from "../assets/logicui/lmp/lmp_logo.jpg";
-import ImageScreenshotLogo from "../assets/logicui/screenshot/screenshot_logo.jpg";
-import ImageRecorderLogo from "../assets/logicui/recorder/recorder_logo.jpg";
-import ImageCameraLogo from "../assets/logicui/camera/camera_logo.jpg";
-import ImageTVBrowserLogo from "../assets/logicui/browser/browser_logo.jpg";
+import { Col, Row, Container, Badge } from "react-bootstrap";
 import Link from "next/link";
+
+import ImageLMPLogo from "../assets/logicui/lmp/logo.jpg";
+import ImageScreenshotLogo from "../assets/logicui/screenshot/logo.jpg";
+import ImageRecorderLogo from "../assets/logicui/recorder/logo.jpg";
+import ImageCameraLogo from "../assets/logicui/camera/logo.jpg";
+import ImageTVBrowserLogo from "../assets/logicui/browser/logo.jpg";
+import ImageLectureRecorderLogo from "../assets/logicui/lecture_recorder/logo.jpg";
+
+import ImageScreenshotBanner from "../assets/logicui/screenshot/banner.jpg";
+import ImageTVBrowserBanner from "../assets/logicui/browser/banner.jpg";
+import ImageCameraBanner from "../assets/logicui/camera/banner.jpg";
+import ImageRecorderBanner from "../assets/logicui/recorder/banner.jpg";
+import ImageLMPBanner from "../assets/logicui/lmp/banner.jpg";
+import ImageLectureRecorderBanner from "../assets/logicui/lecture_recorder/banner.jpg";
 
 export default function LogicUI() {
 	return (
@@ -32,113 +40,155 @@ export default function LogicUI() {
 					content="https://firebasestorage.googleapis.com/v0/b/logicui-9667a.appspot.com/o/others%2Flogicui_banner.png?alt=media&token=506832a0-2425-4125-b0b8-13e3e8266dff"
 				/>
 			</Head>
-			<div className="Container--background Color--home">
-				<Image
-					src={BannerImage}
-					layout="fill"
-					objectFit="cover"
-					priority
-				/>
-			</div>
-			<div className="Buffer--50px" />
-			<Container className="Container--center">
-				<p className="Text--header">Apps by LogicUI</p>
-				<div className="Buffer--20px" />
-				<Row style={{ width: "100%" }}>
+			<Container style={{ padding: 30 }}>
+				<div className="Container--space-between">
+					<p style={{ marginLeft: 20, fontSize: 21 }}>Android Apps</p>
+					<a
+						href="https://play.google.com/store/apps/developer?id=LogicUI"
+						target="_blank"
+						rel="noreferrer"
+						className="Toggle"
+						style={{
+							marginRight: 20,
+							fontSize: 17,
+							fontWeight: 300,
+						}}
+					>
+						View on Play Store
+					</a>
+				</div>
+				<Row style={{ margin: 0 }}>
 					<Content />
 				</Row>
 			</Container>
-			<div className="Buffer--50px" />
 		</>
 	);
 }
 
 function Content() {
-	const itemArray = [];
-	apps.forEach((item) => {
-		itemArray.push(
-			<Col
-				sm={12}
-				md={6}
-				lg={4}
-				key={item.codename}
-				style={{ display: "flex", flexDirection: "column" }}
-			>
-				<Link href={"/" + item.codename}>
-					<div className="Card">
+	const array = [];
+	apps.forEach((app) => {
+		array.push(
+			<Col xs={12} md={6} lg={4} style={{ padding: 0 }}>
+				<Link href={app.codename}>
+					<div
+						className="Toggle"
+						style={{
+							padding: 20,
+						}}
+					>
+						<Image
+							src={app.banner}
+							className="Image--app-icon"
+							objectFit="fill"
+						/>
+
 						<div
 							className="Container--row"
-							style={{ alignItems: "start" }}
+							style={{ marginTop: 10 }}
 						>
-							<Image
-								src={item.image}
-								height={40}
-								width={40}
-								className="Image--app-icon"
-								objectFit="fill"
-							/>
-
+							<div style={{ paddingTop: 5 }}>
+								<Image
+									src={app.image}
+									height={50}
+									width={50}
+									className="Image--app-icon"
+									objectFit="fill"
+								/>
+							</div>
 							<div
-								style={{
-									flexDirection: "column",
-									marginLeft: 20,
-									flex: 1,
-								}}
+								className="Contianer--column"
+								style={{ marginLeft: 15 }}
 							>
-								<p className="Text--subheader">{item.name}</p>
-								<p className="Text--paragraph">
-									{item.description}
+								<p style={{ fontSize: 17, width: "100%" }}>
+									{app.name + "	"}
+									{app.installs !== undefined ? (
+										<Badge
+											bg="warning"
+											text="dark"
+											style={{
+												fontWeight: 500,
+												borderRadius: 20,
+											}}
+										>
+											{app.installs}
+										</Badge>
+									) : null}
+								</p>
+								<p
+									style={{
+										fontSize: 17,
+										width: "100%",
+										fontWeight: 300,
+									}}
+								>
+									{app.description}
 								</p>
 							</div>
 						</div>
 					</div>
 				</Link>
-				<div className="Buffer--20px" />
 			</Col>
 		);
 	});
-	return itemArray;
+	return array;
 }
 
-const apps = [
+export const apps = [
 	{
-		image: ImageLMPLogo,
-		codename: "musicplayer",
-		name: "LogicUI Music Player",
-		status: "success",
+		image: ImageTVBrowserLogo,
+		banner: ImageTVBrowserBanner,
+		codename: "browser",
+		name: "TV Browser",
 		description:
-			"Music player designed to make maintaining playlists simple. LMP also supports a variety of artist metadata delimiters and flexible Chinese character search.",
+			"TV Browser app is built to address the lack of a browser on Android TV's play store. Supports controlling from your mobile device.",
+		installs: "> 10K Installs",
+		link: "https://play.google.com/store/apps/details?id=com.logicui.tvbrowser2",
 	},
 	{
 		image: ImageScreenshotLogo,
+		banner: ImageScreenshotBanner,
 		codename: "screenshot",
 		name: "Screenshot Framer",
-		status: "success",
 		description:
 			"Add a frame around your screenshot the smart way! Screenshot Framer intelligently adds a frame around your screenshots without skewing or cropping it.",
+		installs: "> 500 Installs",
+		link: "https://play.google.com/store/apps/details?id=com.logicui.screenshotframer",
+	},
+	{
+		image: ImageLMPLogo,
+		banner: ImageLMPBanner,
+		codename: "musicplayer",
+		name: "Music Player",
+		description:
+			"Music player that makes maintaining playlists simple. LMP also supports a variety of artist metadata delimiters and flexible Chinese character search.",
+		link: "https://play.google.com/store/apps/details?id=com.logicui.musicplayer",
 	},
 	{
 		image: ImageRecorderLogo,
+		banner: ImageRecorderBanner,
 		codename: "recorder",
-		name: "LogicUI Recorder",
-		status: "success",
+		name: "Recorder",
 		description:
 			"Audio recorder that makes recording audio with Bluetooth microphone/headphones a breeze on Android devices.",
+		link: "https://play.google.com/store/apps/details?id=com.logicui.audiorecorder",
+	},
+	{
+		image: ImageLectureRecorderLogo,
+		banner: ImageLectureRecorderBanner,
+		codename: "lecturerecorder",
+		name: "Lecture Recorder",
+		description:
+			"Record videos/audio in picture-in-picture mode while you work on other apps. Then, playback in picture-in-picture mode.",
+		link: "https://play.google.com/store/apps/details?id=com.logicui.lecturerecorder",
 	},
 	{
 		image: ImageCameraLogo,
+		banner: ImageCameraBanner,
 		codename: "camera",
-		name: "LogicUI Camera Concept",
-		status: "danger",
+		name: "Camera Concept",
 		description:
-			"Camera app designed for one-handed use. Includes optimizations for single-hand control of focus and exposure, as well as triggering of shutter with a smile.",
-	},
-	{
-		image: ImageTVBrowserLogo,
-		codename: "browser",
-		name: "LogicUI TV Browser",
-		status: "warning",
-		description:
-			"TV Browser app is built to address the lack of a browser on Android TV's play store. Designed to be used with the D-pad on remotes.",
+			"DISCONTINUED. Camera app concept designed for one-handed use, from shuttle to focus and exposure.",
+		link: "https://play.google.com/store/apps/details?id=com.logicui.logicuicamera",
 	},
 ];

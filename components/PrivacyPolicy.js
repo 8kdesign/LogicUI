@@ -2,7 +2,6 @@ export default function PrivacyPolicy({ name }) {
 	return (
 		<>
 			<p>
-				<div className="Buffer--50px" />
 				<p className="Text--header">Privacy Policy</p>
 				<p className="Text--paragraph">
 					8K built {name} as a Free app. This SERVICE is provided by
@@ -148,6 +147,7 @@ export default function PrivacyPolicy({ name }) {
 					.
 				</p>
 			</p>
+			<div className="Buffer--50px" />
 		</>
 	);
 }

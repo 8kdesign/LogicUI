@@ -1,10 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;400;500;600;700&display=swap");
+
 :root {
 	--line-light: #c5c5c5;
 	--line-dark: #616161;
 }
 
 p {
+	font-family: "Kanit";
 	margin: 0px;
+}
+
+a {
+	font-family: "Kanit";
+	margin: 0px;
+}
+
+a:hover {
+	color: #858585;
 }
 
 /* Containers */
@@ -51,7 +63,12 @@ p {
 	display: flex;
 	width: 100%;
 	flex-direction: row;
-	align-items: center;
+}
+
+.Contianer--column {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
 }
 
 .Container--scale {
@@ -72,7 +89,7 @@ p {
 }
 
 .Container--content {
-	margin-top: 56px;
+	margin-top: 60px;
 }
 
 /* Text */
@@ -179,6 +196,15 @@ p {
 
 .Rotate--180 {
 	rotate: 180;
+}
+
+.Toggle {
+	cursor: pointer;
+	user-select: none;
+}
+
+.Toggle:hover {
+	opacity: 0.9;
 }
 
 /* Colors */
