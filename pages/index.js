@@ -92,6 +92,7 @@ function Content() {
 										fontSize: 21,
 										width: "100%",
 										fontWeight: 500,
+										marginBottom: 5,
 									}}
 								>
 									{app.name}
