@@ -43,19 +43,6 @@ export default function LogicUI() {
 			<Container style={{ padding: 30 }}>
 				<div className="Container--space-between">
 					<p style={{ marginLeft: 20, fontSize: 21 }}>Android Apps</p>
-					<a
-						href="https://play.google.com/store/apps/developer?id=LogicUI"
-						target="_blank"
-						rel="noreferrer"
-						className="Toggle"
-						style={{
-							marginRight: 20,
-							fontSize: 17,
-							fontWeight: 300,
-						}}
-					>
-						View on Play Store
-					</a>
 				</div>
 				<Row style={{ margin: 0 }}>
 					<Content />
