@@ -207,6 +207,24 @@ a:hover {
 	opacity: 0.9;
 }
 
+.ClearInput {
+	border: none;
+	background: none;
+	padding: 0px;
+}
+
+.ClearInput:focus {
+	outline: none !important;
+}
+
+/* Bootstrap */
+
+.modal-content {
+	border-width: 0px;
+	border-radius: 8px;
+	width: fit-content;
+}
+
 /* Colors */
 
 .Color--home {
