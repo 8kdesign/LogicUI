@@ -221,14 +221,12 @@ a:hover {
 
 .modal-content {
 	border-width: 0px;
-	border-radius: 8px;
-	width: fit-content;
+	background: none;
 }
 
 :global(.modal-content) {
 	border-width: 0px;
-	border-radius: 8px;
-	width: fit-content;
+	background: none;
 }
 
 /* Colors */

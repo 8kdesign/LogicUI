@@ -79,32 +79,44 @@ export default function ColorPalette({ colors, setColors, name }) {
 							alignItems: "center",
 						}}
 					>
-						<HexColorPicker
-							color={colors[showSelector]}
-							onChange={(color) => {
-								const newColors = [...colors];
-								newColors[showSelector] = color;
-								setColors(newColors);
+						<div
+							style={{
+								width: 210,
+								background: "white",
+								borderRadius: 10,
 							}}
-							style={{ margin: "5px 5px 0px 5px" }}
-						/>
-						<div className="Container--row" style={{ padding: 5 }}>
-							<p style={{ marginRight: 5 }}>#</p>
-							<input
-								value={inputValue}
-								onChange={(event) => {
-									const text =
-										event.target.value.toUpperCase();
-									setInputValue(text);
-									const pattern = /^([A-F0-9]{6,6})$/;
-									if (pattern.test(text)) {
-										const newColors = [...colors];
-										newColors[showSelector] = "#" + text;
-										setColors(newColors);
-									}
+						>
+							<HexColorPicker
+								color={colors[showSelector]}
+								onChange={(color) => {
+									const newColors = [...colors];
+									newColors[showSelector] = color;
+									setColors(newColors);
 								}}
-								className="ClearInput"
+								style={{ margin: "5px 5px 0px 5px" }}
 							/>
+							<div
+								className="Container--row"
+								style={{ width: 200, padding: 10 }}
+							>
+								<p style={{ marginRight: 5 }}>#</p>
+								<input
+									value={inputValue}
+									onChange={(event) => {
+										const text =
+											event.target.value.toUpperCase();
+										setInputValue(text);
+										const pattern = /^([A-F0-9]{6,6})$/;
+										if (pattern.test(text)) {
+											const newColors = [...colors];
+											newColors[showSelector] =
+												"#" + text;
+											setColors(newColors);
+										}
+									}}
+									className="ClearInput"
+								/>
+							</div>
 						</div>
 					</div>
 				)}
