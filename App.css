@@ -225,6 +225,12 @@ a:hover {
 	width: fit-content;
 }
 
+:global(.modal-content) {
+	border-width: 0px;
+	border-radius: 8px;
+	width: fit-content;
+}
+
 /* Colors */
 
 .Color--home {
