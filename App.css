@@ -224,7 +224,7 @@ a:hover {
 	background: none;
 }
 
-:global(.modal-content) {
+.modal-content :global(div.modal-content) {
 	border-width: 0px;
 	background: none;
 }
