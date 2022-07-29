@@ -33,7 +33,7 @@ export default function Export({
 					checked={mode === i}
 					onChange={() => {}}
 				/>
-				<p style={{ marginRight: 30 }}>{modes[i]}</p>
+				<p style={{ marginRight: 30, marginBottom: 0 }}>{modes[i]}</p>
 			</div>
 		);
 	}
