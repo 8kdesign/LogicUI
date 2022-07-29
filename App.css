@@ -220,13 +220,8 @@ a:hover {
 /* Bootstrap */
 
 .modal-content {
-	border-width: 0px;
-	background: none;
-}
-
-.modal-content :global(div.modal-content) {
-	border-width: 0px;
-	background: none;
+	border-width: 0px !important;
+	background: none !important;
 }
 
 /* Colors */
