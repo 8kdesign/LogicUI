@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Container } from "react-bootstrap";
-import ColorPalette from "../../../components/ColorPalette";
-import ToolHeader from "../../../components/ToolHeader";
+import ColorPalette from "../../../components/tools/ColorPalette";
+import Export from "../../../components/tools/Export";
+import ToolHeader from "../../../components/tools/ToolHeader";
 
 export default function ColorGenerator() {
 	const [primary, setPrimary] = useState(defaultColors[0]);
@@ -50,6 +51,17 @@ export default function ColorGenerator() {
 				/>
 			</div>
 			<br />
+			<p style={{ fontSize: 27, marginTop: 20, marginBottom: 20 }}>
+				Export to Code
+			</p>
+			<Export
+				primary={primary}
+				secondary={secondary}
+				tertiary={tertiary}
+				error={error}
+				background={background}
+				outline={outline}
+			/>
 		</Container>
 	);
 }
@@ -78,7 +90,7 @@ const defaultColors = [
 	["#256677", "#FFFFFF", "#AFECFF", "#001F27"],
 	["#546064", "#FFFFFF", "#D8E5EA", "#111D21"],
 	["#5B5D71", "#FFFFFF", "#E1E1F9", "#181A2B"],
-	["#F2B8B5", "#601410", "#8C1D18", "#F9DEDC"],
+	["#B3261E", "#FFFFFF", "#F9DEDC", "#410E0B"],
 	["#FCFCFC", "#1A1C1D", "#FCFCFC", "#1A1C1D"],
 	["#DFE3E5", "#434749", "#767778"],
 ];

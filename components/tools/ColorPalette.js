@@ -29,6 +29,7 @@ export default function ColorPalette({ colors, setColors, name }) {
 				xs={12}
 				md={6}
 				lg={3}
+				key={name[i]}
 				style={{
 					background: color,
 					color: secondColor,
@@ -90,7 +91,8 @@ export default function ColorPalette({ colors, setColors, name }) {
 								color={colors[showSelector]}
 								onChange={(color) => {
 									const newColors = [...colors];
-									newColors[showSelector] = color;
+									newColors[showSelector] =
+										color.toUpperCase();
 									setColors(newColors);
 								}}
 								style={{ margin: "5px 5px 0px 5px" }}
@@ -99,7 +101,9 @@ export default function ColorPalette({ colors, setColors, name }) {
 								className="Container--row"
 								style={{ width: 200, padding: 10 }}
 							>
-								<p style={{ marginRight: 5 }}>#</p>
+								<p style={{ marginRight: 5, marginBottom: 0 }}>
+									#
+								</p>
 								<input
 									value={inputValue}
 									onChange={(event) => {

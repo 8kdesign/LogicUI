@@ -56,7 +56,7 @@ function Content() {
 	const array = [];
 	apps.forEach((app) => {
 		array.push(
-			<Col xs={12} md={6} lg={4} style={{ padding: 0 }}>
+			<Col xs={12} md={6} lg={4} style={{ padding: 0 }} key={app.name}>
 				<Link href={app.codename}>
 					<div
 						className="Toggle"
