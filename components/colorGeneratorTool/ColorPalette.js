@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Row, Col, Modal } from "react-bootstrap";
 import { HexColorPicker } from "react-colorful";
+import { Files } from "react-bootstrap-icons";
+import { toast } from "react-hot-toast";
 
 export default function ColorPalette({ colors, setColors, name }) {
 	const array = [];
@@ -42,10 +44,25 @@ export default function ColorPalette({ colors, setColors, name }) {
 			>
 				<div style={{ position: "relative", height: 100 }}>
 					<p style={{ fontWeight: 300 }}>{name[i]}</p>
+					<Files
+						style={{
+							position: "absolute",
+							bottom: 0,
+							left: 0,
+						}}
+						size={20}
+						onClick={(event) => {
+							event.stopPropagation();
+							navigator.clipboard.writeText(color);
+							toast("Copied " + color);
+						}}
+						color={secondColor}
+					/>
 					<p
 						style={{
 							fontWeight: 300,
 							position: "absolute",
+							marginBottom: 0,
 							bottom: 0,
 							right: 0,
 						}}

@@ -15,7 +15,8 @@
     "react-bootstrap": "^2.1.2",
     "react-bootstrap-icons": "^1.7.2",
     "react-colorful": "^5.5.1",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-hot-toast": "^2.3.0"
   },
   "devDependencies": {
     "eslint": "8.9.0",
