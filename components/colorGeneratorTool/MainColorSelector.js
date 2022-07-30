@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Row, Col, Modal } from "react-bootstrap";
+import { Row, Col, Modal, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { HexColorPicker } from "react-colorful";
+import { toast } from "react-hot-toast";
 
 export default function MainColorSelector({
 	colors,
@@ -192,7 +193,7 @@ export default function MainColorSelector({
 }
 
 function TonePreview({ cmyk, percent }) {
-	const color = getRGBString(cmyk, 1 - percent);
+	const color = getHex(cmyk, 1 - percent);
 	var textColor;
 	if (percent <= 0.5) {
 		textColor = "white";
@@ -200,28 +201,35 @@ function TonePreview({ cmyk, percent }) {
 		textColor = "black";
 	}
 	return (
-		<Col
-			xs={1}
-			style={{
-				height: 50,
-				display: "flex",
-				background: color,
-				flexDirection: "column",
-				alignItems: "center",
-				justifyContent: "center",
-			}}
-		>
-			<p
+		<OverlayTrigger placement="top" overlay={<Tooltip>{color}</Tooltip>}>
+			<Col
+				xs={1}
+				className="Toggle"
 				style={{
-					color: textColor,
-					fontSize: 13,
-					marginBottom: 0,
-					userSelect: "none",
+					height: 50,
+					display: "flex",
+					background: color,
+					flexDirection: "column",
+					alignItems: "center",
+					justifyContent: "center",
+				}}
+				onClick={() => {
+					navigator.clipboard.writeText(color);
+					toast("Copied " + color);
 				}}
 			>
-				{percent * 100}
-			</p>
-		</Col>
+				<p
+					style={{
+						color: textColor,
+						fontSize: 13,
+						marginBottom: 0,
+						userSelect: "none",
+					}}
+				>
+					{percent * 100}
+				</p>
+			</Col>
+		</OverlayTrigger>
 	);
 }
 
@@ -242,33 +250,6 @@ function getCMYK(color) {
 		y: Math.max(Math.min(Math.round(y * 100), 100), 0),
 		k: Math.max(Math.min(Math.round(k * 100), 100), 0),
 	};
-}
-
-function getRGBString(cmyk, percent) {
-	var c = cmyk.c / 100;
-	var m = cmyk.m / 100;
-	var y = cmyk.y / 100;
-	var k = percent;
-	if (k >= 0.1 && k < 1) {
-		k -= 0.1;
-	}
-	if (percent < 0.5) {
-		c *= Math.sqrt(percent);
-		m *= Math.sqrt(percent);
-		y *= Math.sqrt(percent);
-	}
-	const r = 255 * (1 - c) * (1 - k);
-	const g = 255 * (1 - m) * (1 - k);
-	const b = 255 * (1 - y) * (1 - k);
-	return (
-		"rgb(" +
-		Math.max(Math.min(Math.round(r), 255), 0) +
-		", " +
-		Math.max(Math.min(Math.round(g), 255), 0) +
-		", " +
-		Math.max(Math.min(Math.round(b), 255), 0) +
-		")"
-	);
 }
 
 function getHex(cmyk, percent) {

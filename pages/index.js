@@ -150,7 +150,7 @@ function ToolContent() {
 	tools.forEach((tool) => {
 		array.push(
 			<Col xs={12} md={6} lg={4} style={{ padding: 0 }} key={tool.name}>
-				<Link href={"/tools/" + tool.codename}>
+				<Link href={tool.codename}>
 					<div
 						className="Toggle"
 						style={{

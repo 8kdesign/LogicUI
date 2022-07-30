@@ -1,11 +1,11 @@
 import Head from "next/head";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
-import DarkModeSelector from "../../../components/colorGeneratorTool/DarkModeSelector";
-import Export from "../../../components/colorGeneratorTool/Export";
-import MainSetup from "../../../components/colorGeneratorTool/MainSetup";
-import Preview from "../../../components/colorGeneratorTool/Preview";
-import ToolHeader from "../../../components/colorGeneratorTool/ToolHeader";
+import DarkModeSelector from "../../components/colorGeneratorTool/DarkModeSelector";
+import Export from "../../components/colorGeneratorTool/Export";
+import MainSetup from "../../components/colorGeneratorTool/MainSetup";
+import Preview from "../../components/colorGeneratorTool/Preview";
+import ToolHeader from "../../components/colorGeneratorTool/ToolHeader";
 
 export default function ColorGenerator() {
 	const [primary, setPrimary] = useState(defaultColors[0]);
@@ -62,8 +62,9 @@ export default function ColorGenerator() {
 						marginBottom: 20,
 					}}
 				>
-					Selected the key colors for your app. These colors will be
-					used to generate a suggested color palette.
+					Select the key colors for your app by clicking on the boxes
+					on the left. These colors are used to generate a color
+					palette based on the Material Design 3 guidelines.
 				</p>
 				<MainSetup
 					primary={primary}
@@ -95,7 +96,7 @@ export default function ColorGenerator() {
 						marginBottom: 20,
 					}}
 				>
-					Preview and modify the color palette before exporting.
+					Preview and fine-tune the color palette before exporting.
 				</p>
 				<div
 					style={{
