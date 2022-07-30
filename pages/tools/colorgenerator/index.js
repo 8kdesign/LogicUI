@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Container } from "react-bootstrap";
 import ColorPalette from "../../../components/colorGeneratorTool/ColorPalette";
 import Export from "../../../components/colorGeneratorTool/Export";
-import MainColorSelector from "../../../components/colorGeneratorTool/MainColorSelector";
+import MainSetup from "../../../components/colorGeneratorTool/MainSetup";
 import ToolHeader from "../../../components/colorGeneratorTool/ToolHeader";
 
 export default function ColorGenerator() {
@@ -16,38 +16,43 @@ export default function ColorGenerator() {
 	return (
 		<Container>
 			<ToolHeader tool={tool} />
-			<p style={{ fontSize: 27, marginTop: 20, marginBottom: 20 }}>
+			<p style={{ fontSize: 27, marginTop: 20, marginBottom: 0 }}>
 				{"1) Select Main Colors"}
 			</p>
-			<div
-				style={{ padding: 20, background: "#E3ECF0", borderRadius: 10 }}
+			<p
+				style={{
+					fontSize: 17,
+					fontWeight: 300,
+					marginTop: 10,
+					marginBottom: 20,
+				}}
 			>
-				<MainColorSelector
-					colors={primary}
-					setColors={setPrimary}
-					name={"Primary"}
-				/>
-				<br />
-				<MainColorSelector
-					colors={secondary}
-					setColors={setSecondary}
-					name={"Secondary"}
-				/>
-				<br />
-				<MainColorSelector
-					colors={tertiary}
-					setColors={setTertiary}
-					name={"Tertiary"}
-				/>
-				<br />
-				<MainColorSelector
-					colors={error}
-					setColors={setError}
-					name={"Error"}
-				/>
-			</div>
-			<p style={{ fontSize: 27, marginTop: 20, marginBottom: 20 }}>
+				Selected the key colors for your app. These colors will be used
+				to generate a suggested color palette.
+			</p>
+			<MainSetup
+				primary={primary}
+				secondary={secondary}
+				tertiary={tertiary}
+				error={error}
+				setPrimary={setPrimary}
+				setSecondary={setSecondary}
+				setTertiary={setTertiary}
+				setError={setError}
+			/>
+			<br />
+			<p style={{ fontSize: 27, marginTop: 20, marginBottom: 0 }}>
 				{"2) Preview & Modify Colors"}
+			</p>
+			<p
+				style={{
+					fontSize: 17,
+					fontWeight: 300,
+					marginTop: 10,
+					marginBottom: 20,
+				}}
+			>
+				Preview and modify the color palette before exporting.
 			</p>
 			<div
 				style={{ padding: 20, background: "#E3ECF0", borderRadius: 10 }}
@@ -85,8 +90,19 @@ export default function ColorGenerator() {
 				/>
 			</div>
 			<br />
-			<p style={{ fontSize: 27, marginTop: 20, marginBottom: 20 }}>
+			<p style={{ fontSize: 27, marginTop: 20, marginBottom: 0 }}>
 				{"3) Export to Code"}
+			</p>
+			<p
+				style={{
+					fontSize: 17,
+					fontWeight: 300,
+					marginTop: 10,
+					marginBottom: 20,
+				}}
+			>
+				Select the platform which you are building for and copy and
+				paste the code below into the specified files.
 			</p>
 			<Export
 				primary={primary}
@@ -121,10 +137,10 @@ const names = [
 ];
 
 const defaultColors = [
-	["#205866", "#FFFFFF", "#D6E2E6", "#081619"],
-	["#566266", "#FFFFFF", "#E2E5E6", "#151819"],
-	["#535466", "#FFFFFF", "#E1E1E6", "#151519"],
-	["#661511", "#FFFFFF", "#E6D3D2", "#190504"],
+	["#6750A4", "#FFFFFF", "#CBC0E6", "#201933"],
+	["#625B71", "#FFFFFF", "#DCD8E6", "#2C2933"],
+	["#7D5260", "#FFFFFF", "#E6CDD5", "#332227"],
+	["#B3261E", "#FFFFFF", "#E6ACA9", "#330B09"],
 	["#FCFCFC", "#1A1C1D", "#FCFCFC", "#1A1C1D"],
 	["#DFE3E5", "#434749", "#767778"],
 ];

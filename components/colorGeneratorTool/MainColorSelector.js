@@ -2,10 +2,17 @@ import { useState, useEffect } from "react";
 import { Row, Col, Modal } from "react-bootstrap";
 import { HexColorPicker } from "react-colorful";
 
-export default function MainColorSelector({ colors, setColors, name }) {
+export default function MainColorSelector({
+	colors,
+	setColors,
+	name,
+	core,
+	container,
+}) {
 	const [main, setMain] = useState(colors[0]);
 	const [showSelector, setShowSelector] = useState(false);
 	const [inputValue, setInputValue] = useState("");
+
 	const cmyk = getCMYK(main);
 
 	useEffect(() => {
@@ -15,12 +22,33 @@ export default function MainColorSelector({ colors, setColors, name }) {
 
 	useEffect(() => {
 		if (colors.length !== 4) return;
-		const main40 = getHex(cmyk, 1 - 0.4).toUpperCase();
-		const main100 = "#FFFFFF";
-		const main90 = getHex(cmyk, 1 - 0.9).toUpperCase();
-		const main10 = getHex(cmyk, 1 - 0.1).toUpperCase();
-		setColors([main40, main100, main90, main10]);
-	}, [main]);
+		const newColors = [];
+		switch (core) {
+			case 1: {
+				const main40 = getHex(cmyk, 1 - 0.4).toUpperCase();
+				newColors.push(main40);
+				break;
+			}
+			case 2: {
+				const main50 = getHex(cmyk, 1 - 0.5).toUpperCase();
+				newColors.push(main50);
+				break;
+			}
+			default: {
+				newColors.push(main);
+			}
+		}
+		newColors.push("#FFFFFF");
+		newColors.push(getHex(cmyk, 1 - 0.9).toUpperCase());
+		if (container === 1) {
+			const main20 = getHex(cmyk, 1 - 0.2).toUpperCase();
+			newColors.push(main20);
+		} else {
+			const main10 = getHex(cmyk, 1 - 0.1).toUpperCase();
+			newColors.push(main10);
+		}
+		setColors(newColors);
+	}, [main, core, container]);
 
 	return (
 		<Row>
@@ -181,9 +209,9 @@ function getRGBString(cmyk, percent) {
 	var y = cmyk.y / 100;
 	const k = percent;
 	if (percent < 0.5) {
-		c *= percent;
-		m *= percent;
-		y *= percent;
+		c *= Math.sqrt(percent);
+		m *= Math.sqrt(percent);
+		y *= Math.sqrt(percent);
 	}
 	const r = 255 * (1 - c) * (1 - k);
 	const g = 255 * (1 - m) * (1 - k);
@@ -205,9 +233,9 @@ function getHex(cmyk, percent) {
 	var y = cmyk.y / 100;
 	const k = percent;
 	if (percent < 0.5) {
-		c *= percent;
-		m *= percent;
-		y *= percent;
+		c *= Math.sqrt(percent);
+		m *= Math.sqrt(percent);
+		y *= Math.sqrt(percent);
 	}
 	const r = 255 * (1 - c) * (1 - k);
 	const g = 255 * (1 - m) * (1 - k);
