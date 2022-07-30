@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
 import ColorPalette from "../../../components/colorGeneratorTool/ColorPalette";
