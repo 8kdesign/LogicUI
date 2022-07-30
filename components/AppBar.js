@@ -14,6 +14,7 @@ export default function AppBar() {
 								color: "#aaaaaa",
 								userSelect: "none",
 								textAlign: "center",
+								marginBottom: 0,
 							}}
 						>
 							<b style={{ color: "#3b3b3b" }}>Logic </b>UI

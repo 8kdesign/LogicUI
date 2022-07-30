@@ -211,7 +211,7 @@ export default function ExportXML({
 					whiteSpace: "pre",
 				}}
 			>
-				<p>{step1}</p>
+				<p style={{ marginBottom: 0 }}>{step1}</p>
 			</div>
 			<p style={{ fontSize: 27, marginBottom: 10, marginTop: 40 }}>
 				{"Step #2: Replace colors.xml (Night)"}
@@ -234,7 +234,7 @@ export default function ExportXML({
 					whiteSpace: "pre",
 				}}
 			>
-				<p>{step2}</p>
+				<p style={{ marginBottom: 0 }}>{step2}</p>
 			</div>
 			<p
 				style={{
@@ -263,7 +263,7 @@ export default function ExportXML({
 					whiteSpace: "pre",
 				}}
 			>
-				<p>{step3}</p>
+				<p style={{ marginBottom: 0 }}>{step3}</p>
 			</div>
 		</div>
 	);

@@ -230,7 +230,7 @@ export default function ExportCompose({
 					whiteSpace: "pre",
 				}}
 			>
-				<p>{step1}</p>
+				<p style={{ marginBottom: 0 }}>{step1}</p>
 			</div>
 			<p
 				style={{
@@ -259,7 +259,7 @@ export default function ExportCompose({
 					whiteSpace: "pre",
 				}}
 			>
-				<p>{step2}</p>
+				<p style={{ marginBottom: 0 }}>{step2}</p>
 			</div>
 		</div>
 	);
