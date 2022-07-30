@@ -15,6 +15,10 @@ export default function MainSetup({
 	setSecondaryDark,
 	setTertiaryDark,
 	setErrorDark,
+	setBackground,
+	setOutline,
+	setBackgroundDark,
+	setOutlineDark,
 }) {
 	const [core, setCore] = useState(0);
 
@@ -26,6 +30,10 @@ export default function MainSetup({
 				setColorsDark={setPrimaryDark}
 				name={"Primary"}
 				core={core}
+				setBackground={setBackground}
+				setOutline={setOutline}
+				setBackgroundDark={setBackgroundDark}
+				setOutlineDark={setOutlineDark}
 			/>
 			<br />
 			<MainColorSelector

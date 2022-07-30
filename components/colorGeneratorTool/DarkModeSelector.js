@@ -59,7 +59,7 @@ export default function DarkModeSelector({ showDark, setShowDark }) {
 						style={{
 							marginBottom: 0,
 							color: "white",
-							background: "#307987",
+							background: "#784B82",
 							padding: "5px 20px",
 							borderRadius: 5,
 						}}

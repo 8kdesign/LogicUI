@@ -8,6 +8,10 @@ export default function MainColorSelector({
 	setColorsDark,
 	name,
 	core,
+	setBackground,
+	setOutline,
+	setBackgroundDark,
+	setOutlineDark,
 }) {
 	const [main, setMain] = useState(colors[0]);
 	const [showSelector, setShowSelector] = useState(false);
@@ -50,6 +54,16 @@ export default function MainColorSelector({
 		newColorsDark.push(getHex(cmyk, 1 - 0.3).toUpperCase());
 		newColorsDark.push(getHex(cmyk, 1 - 0.9).toUpperCase());
 		setColorsDark(newColorsDark);
+		// Background, Surface & Outline
+		if (
+			setBackground === undefined ||
+			setOutline === undefined ||
+			setBackgroundDark === undefined ||
+			setOutlineDark === undefined
+		)
+			return;
+		setNewBackground(cmyk, setBackground, setBackgroundDark);
+		setNewOutline(cmyk, setOutline, setOutlineDark);
 	}, [main, core]);
 
 	return (
@@ -286,4 +300,30 @@ function getHex(cmyk, percent) {
 		blue = "0" + blue;
 	}
 	return "#" + red + green + blue;
+}
+
+function setNewBackground(cmyk, setBackground, setBackgroundDark) {
+	var c = cmyk.c * 0.05;
+	var m = cmyk.m * 0.05;
+	var y = cmyk.y * 0.05;
+	var cmykBackground = { c: c, m: m, y: y, k: 0.5 };
+	var neutral10 = getHex(cmykBackground, 1 - 0.1);
+	var neutral90 = getHex(cmykBackground, 1 - 0.9);
+	var neutral99 = getHex(cmykBackground, 1 - 0.99);
+	setBackground([neutral99, neutral10, neutral99, neutral10]);
+	setBackgroundDark([neutral10, neutral90, neutral10, neutral90]);
+}
+
+function setNewOutline(cmyk, setOutline, setOutlineDark) {
+	var c = cmyk.c * 0.2;
+	var m = cmyk.m * 0.2;
+	var y = cmyk.y * 0.2;
+	var cmykOutline = { c: c, m: m, y: y, k: 0.5 };
+	var neutralVariant30 = getHex(cmykOutline, 1 - 0.3);
+	var neutralVariant50 = getHex(cmykOutline, 1 - 0.5);
+	var neutralVariant60 = getHex(cmykOutline, 1 - 0.6);
+	var neutralVariant80 = getHex(cmykOutline, 1 - 0.8);
+	var neutralVariant90 = getHex(cmykOutline, 1 - 0.9);
+	setOutline([neutralVariant90, neutralVariant30, neutralVariant50]);
+	setOutlineDark([neutralVariant30, neutralVariant80, neutralVariant60]);
 }

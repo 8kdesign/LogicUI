@@ -78,6 +78,10 @@ export default function ColorGenerator() {
 					setSecondaryDark={setSecondaryDark}
 					setTertiaryDark={setTertiaryDark}
 					setErrorDark={setErrorDark}
+					setBackground={setBackground}
+					setOutline={setOutline}
+					setBackgroundDark={setBackgroundDark}
+					setOutlineDark={setOutlineDark}
 				/>
 				<br />
 				<p style={{ fontSize: 27, marginTop: 20, marginBottom: 0 }}>
