@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Container } from "react-bootstrap";
-import ColorPalette from "../../../components/tools/ColorPalette";
-import Export from "../../../components/tools/Export";
-import ToolHeader from "../../../components/tools/ToolHeader";
+import ColorPalette from "../../../components/colorGeneratorTool/ColorPalette";
+import Export from "../../../components/colorGeneratorTool/Export";
+import MainColorSelector from "../../../components/colorGeneratorTool/MainColorSelector";
+import ToolHeader from "../../../components/colorGeneratorTool/ToolHeader";
 
 export default function ColorGenerator() {
 	const [primary, setPrimary] = useState(defaultColors[0]);
@@ -15,6 +16,39 @@ export default function ColorGenerator() {
 	return (
 		<Container>
 			<ToolHeader tool={tool} />
+			<p style={{ fontSize: 27, marginTop: 20, marginBottom: 20 }}>
+				{"1) Select Main Colors"}
+			</p>
+			<div
+				style={{ padding: 20, background: "#E3ECF0", borderRadius: 10 }}
+			>
+				<MainColorSelector
+					colors={primary}
+					setColors={setPrimary}
+					name={"Primary"}
+				/>
+				<br />
+				<MainColorSelector
+					colors={secondary}
+					setColors={setSecondary}
+					name={"Secondary"}
+				/>
+				<br />
+				<MainColorSelector
+					colors={tertiary}
+					setColors={setTertiary}
+					name={"Tertiary"}
+				/>
+				<br />
+				<MainColorSelector
+					colors={error}
+					setColors={setError}
+					name={"Error"}
+				/>
+			</div>
+			<p style={{ fontSize: 27, marginTop: 20, marginBottom: 20 }}>
+				{"2) Preview & Modify Colors"}
+			</p>
 			<div
 				style={{ padding: 20, background: "#E3ECF0", borderRadius: 10 }}
 			>
@@ -52,7 +86,7 @@ export default function ColorGenerator() {
 			</div>
 			<br />
 			<p style={{ fontSize: 27, marginTop: 20, marginBottom: 20 }}>
-				Export to Code
+				{"3) Export to Code"}
 			</p>
 			<Export
 				primary={primary}
@@ -67,7 +101,7 @@ export default function ColorGenerator() {
 }
 
 const tool = {
-	name: "App Color Generator",
+	name: "Material 3 Color Generator",
 	description:
 		"Select a color palette for your app and generate code to import the colors.",
 };
@@ -87,10 +121,10 @@ const names = [
 ];
 
 const defaultColors = [
-	["#256677", "#FFFFFF", "#AFECFF", "#001F27"],
-	["#546064", "#FFFFFF", "#D8E5EA", "#111D21"],
-	["#5B5D71", "#FFFFFF", "#E1E1F9", "#181A2B"],
-	["#B3261E", "#FFFFFF", "#F9DEDC", "#410E0B"],
+	["#205866", "#FFFFFF", "#D6E2E6", "#081619"],
+	["#566266", "#FFFFFF", "#E2E5E6", "#151819"],
+	["#535466", "#FFFFFF", "#E1E1E6", "#151519"],
+	["#661511", "#FFFFFF", "#E6D3D2", "#190504"],
 	["#FCFCFC", "#1A1C1D", "#FCFCFC", "#1A1C1D"],
 	["#DFE3E5", "#434749", "#767778"],
 ];

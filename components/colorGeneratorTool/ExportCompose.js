@@ -8,7 +8,7 @@ export default function ExportCompose({
 }) {
 	return (
 		<div style={{ whiteSpace: "pre" }}>
-			<p style={{ fontSize: 27, marginBottom: 10 }}>Copy to Color.kt</p>
+			<p style={{ fontSize: 27, marginBottom: 10 }}>Add to Color.kt</p>
 			<div
 				style={{
 					background: "#FAFAFA",
@@ -96,7 +96,7 @@ export default function ExportCompose({
 					marginTop: 40,
 				}}
 			>
-				Add to Theme.kt
+				Add to theme in Theme.kt
 			</p>
 			<div
 				style={{

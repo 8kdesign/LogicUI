@@ -1,0 +1,228 @@
+import { useState, useEffect } from "react";
+import { Row, Col, Modal } from "react-bootstrap";
+import { HexColorPicker } from "react-colorful";
+
+export default function MainColorSelector({ colors, setColors, name }) {
+	const [main, setMain] = useState(colors[0]);
+	const [showSelector, setShowSelector] = useState(false);
+	const [inputValue, setInputValue] = useState("");
+	const cmyk = getCMYK(main);
+
+	useEffect(() => {
+		if (showSelector === false) return;
+		setInputValue(main.substring(1));
+	}, [showSelector, main]);
+
+	useEffect(() => {
+		if (colors.length !== 4) return;
+		const main40 = getHex(cmyk, 1 - 0.4).toUpperCase();
+		const main100 = "#FFFFFF";
+		const main90 = getHex(cmyk, 1 - 0.9).toUpperCase();
+		const main10 = getHex(cmyk, 1 - 0.1).toUpperCase();
+		setColors([main40, main100, main90, main10]);
+	}, [main]);
+
+	return (
+		<Row>
+			<Col xs={12} md={4} lg={3} xl={2}>
+				<div
+					className="Container--row"
+					style={{ alignItems: "center", height: 50 }}
+				>
+					<p style={{ width: 120, fontSize: 19, marginBottom: 0 }}>
+						{name}
+					</p>
+					<div
+						className="Toggle"
+						onClick={() => {
+							setShowSelector(true);
+						}}
+						style={{
+							height: 30,
+							width: 80,
+							background: main,
+							borderRadius: 5,
+							borderColor: "white",
+							borderStyle: "solid",
+							borderWidth: 3,
+						}}
+					/>
+				</div>
+			</Col>
+			<Col xs={12} md={8} lg={9} xl={10}>
+				<Row style={{ paddingLeft: 10, paddingRight: 10 }}>
+					<TonePreview cmyk={cmyk} percent={0} />
+					<TonePreview cmyk={cmyk} percent={0.1} />
+					<TonePreview cmyk={cmyk} percent={0.2} />
+					<TonePreview cmyk={cmyk} percent={0.3} />
+					<TonePreview cmyk={cmyk} percent={0.4} />
+					<TonePreview cmyk={cmyk} percent={0.5} />
+					<TonePreview cmyk={cmyk} percent={0.6} />
+					<TonePreview cmyk={cmyk} percent={0.7} />
+					<TonePreview cmyk={cmyk} percent={0.8} />
+					<TonePreview cmyk={cmyk} percent={0.9} />
+					<TonePreview cmyk={cmyk} percent={0.95} />
+					<TonePreview cmyk={cmyk} percent={0.99} />
+				</Row>
+			</Col>
+			<Modal
+				show={showSelector}
+				onHide={() => {
+					setShowSelector(false);
+				}}
+				centered
+				size="sm"
+				style={{
+					display: "flex",
+					alignItems: "center",
+					justifyContent: "center",
+				}}
+			>
+				{!showSelector ? null : (
+					<div
+						style={{
+							display: "flex",
+							flexDirection: "column",
+							alignItems: "center",
+						}}
+					>
+						<div
+							style={{
+								width: 210,
+								background: "white",
+								borderRadius: 10,
+							}}
+						>
+							<HexColorPicker
+								color={main}
+								onChange={(color) => {
+									setMain(color.toUpperCase());
+								}}
+								style={{ margin: "5px 5px 0px 5px" }}
+							/>
+							<div
+								className="Container--row"
+								style={{ width: 200, padding: 10 }}
+							>
+								<p style={{ marginRight: 5, marginBottom: 0 }}>
+									#
+								</p>
+								<input
+									value={inputValue}
+									onChange={(event) => {
+										const text =
+											event.target.value.toUpperCase();
+										setInputValue(text);
+										const pattern = /^([A-F0-9]{6,6})$/;
+										if (pattern.test(text)) {
+											setMain("#" + text);
+										}
+									}}
+									className="ClearInput"
+								/>
+							</div>
+						</div>
+					</div>
+				)}
+			</Modal>
+		</Row>
+	);
+}
+
+function TonePreview({ cmyk, percent }) {
+	const color = getRGBString(cmyk, 1 - percent);
+	var textColor;
+	if (percent <= 0.5) {
+		textColor = "white";
+	} else {
+		textColor = "black";
+	}
+	return (
+		<Col
+			xs={1}
+			style={{
+				height: 50,
+				display: "flex",
+				background: color,
+				flexDirection: "column",
+				alignItems: "center",
+				justifyContent: "center",
+			}}
+		>
+			<p style={{ color: textColor, fontSize: 13, marginBottom: 0 }}>
+				{percent * 100}
+			</p>
+		</Col>
+	);
+}
+
+function getCMYK(color) {
+	const r = parseInt(color.substring(1, 3), 16) / 255;
+	const g = parseInt(color.substring(3, 5), 16) / 255;
+	const b = parseInt(color.substring(5, 7), 16) / 255;
+	const k = 1 - Math.max(r, g, b);
+	if (k === 1) {
+		return { c: 0, m: 0, y: 0, k: 100 };
+	}
+	const c = (1 - r - k) / (1 - k);
+	const m = (1 - g - k) / (1 - k);
+	const y = (1 - b - k) / (1 - k);
+	return {
+		c: Math.max(Math.min(Math.round(c * 100), 100), 0),
+		m: Math.max(Math.min(Math.round(m * 100), 100), 0),
+		y: Math.max(Math.min(Math.round(y * 100), 100), 0),
+		k: Math.max(Math.min(Math.round(k * 100), 100), 0),
+	};
+}
+
+function getRGBString(cmyk, percent) {
+	var c = cmyk.c / 100;
+	var m = cmyk.m / 100;
+	var y = cmyk.y / 100;
+	const k = percent;
+	if (percent < 0.5) {
+		c *= percent;
+		m *= percent;
+		y *= percent;
+	}
+	const r = 255 * (1 - c) * (1 - k);
+	const g = 255 * (1 - m) * (1 - k);
+	const b = 255 * (1 - y) * (1 - k);
+	return (
+		"rgb(" +
+		Math.max(Math.min(Math.round(r), 255), 0) +
+		", " +
+		Math.max(Math.min(Math.round(g), 255), 0) +
+		", " +
+		Math.max(Math.min(Math.round(b), 255), 0) +
+		")"
+	);
+}
+
+function getHex(cmyk, percent) {
+	var c = cmyk.c / 100;
+	var m = cmyk.m / 100;
+	var y = cmyk.y / 100;
+	const k = percent;
+	if (percent < 0.5) {
+		c *= percent;
+		m *= percent;
+		y *= percent;
+	}
+	const r = 255 * (1 - c) * (1 - k);
+	const g = 255 * (1 - m) * (1 - k);
+	const b = 255 * (1 - y) * (1 - k);
+	var red = Math.max(Math.min(Math.round(r), 255), 0).toString(16);
+	var green = Math.max(Math.min(Math.round(g), 255), 0).toString(16);
+	var blue = Math.max(Math.min(Math.round(b), 255), 0).toString(16);
+	if (red.length < 2) {
+		red = "0" + red;
+	}
+	if (green.length < 2) {
+		green = "0" + green;
+	}
+	if (blue.length < 2) {
+		blue = "0" + blue;
+	}
+	return "#" + red + green + blue;
+}

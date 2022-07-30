@@ -8,7 +8,7 @@ export default function ExportXML({
 }) {
 	return (
 		<div style={{ whiteSpace: "pre" }}>
-			<p style={{ fontSize: 27, marginBottom: 10 }}>Copy to colors.xml</p>
+			<p style={{ fontSize: 27, marginBottom: 10 }}>Replace colors.xml</p>
 			<div
 				style={{
 					background: "#FAFAFA",
