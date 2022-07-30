@@ -21,36 +21,6 @@ a:hover {
 
 /* Containers */
 
-.Container--background {
-	display: flex;
-	width: 100%;
-	height: 700px;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
-	position: relative;
-}
-
-.Container--overlay {
-	display: flex;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-}
-
-.Container--feature {
-	padding: 20px;
-	background-color: #f8f8f8;
-	flex: 1;
-}
-
-.Container--center {
-	display: flex;
-	width: 100%;
-	flex-direction: column;
-	align-items: center;
-}
-
 .Container--space-between {
 	display: flex;
 	width: 100%;
@@ -69,11 +39,6 @@ a:hover {
 	display: flex;
 	width: 100%;
 	flex-direction: column;
-}
-
-.Container--scale {
-	width: 95%;
-	max-width: 900px;
 }
 
 .Container--navbar {
@@ -100,20 +65,6 @@ a:hover {
 	font-weight: 500;
 }
 
-.Text--header-light {
-	color: white;
-	font-size: 35px;
-	font-weight: 500;
-	margin: 0px;
-}
-
-.Text--header-article {
-	font-size: 40px;
-	font-weight: 700;
-	margin: 0px;
-	line-height: 1.2;
-}
-
 .Text--subheader {
 	font-size: 20px;
 	font-weight: 500;
@@ -121,16 +72,11 @@ a:hover {
 
 .Text--paragraph {
 	font-size: 17px;
+	font-weight: 300;
 	line-height: 1.7;
 }
 
 /* Image */
-
-.Image--banner {
-	position: relative;
-	height: 300px;
-	width: 100%;
-}
 
 .Image--app-icon {
 	border-radius: 5px;
@@ -141,36 +87,12 @@ a:hover {
 	margin-right: 10px;
 }
 
-.Image--content {
-	width: fit-content;
-	height: fit-content;
-	max-width: 100%;
-	object-fit: scale-down;
-}
-
-.Image--playstore {
-	width: 60%;
-	max-width: 200px;
-}
-
 /* Misc */
-
-.Line--menu {
-	margin: 10px;
-	height: 20px;
-	width: 1px;
-	background-color: var(--line-dark);
-}
 
 .Line--horizontal {
 	width: 100%;
 	height: 0.1px;
 	background-color: var(--line-light);
-}
-
-.Buffer--10px {
-	height: 10px;
-	width: 10px;
 }
 
 .Buffer--20px {
@@ -181,22 +103,6 @@ a:hover {
 .Buffer--50px {
 	height: 50px;
 	width: 50px;
-}
-
-.Card {
-	background: rgb(247, 247, 247);
-	padding: 20px;
-	cursor: pointer;
-	flex: 1;
-}
-
-.Card:hover {
-	transform: scale(1.01);
-	opacity: 0.9;
-}
-
-.Rotate--180 {
-	rotate: 180;
 }
 
 .Toggle {
@@ -223,60 +129,4 @@ a:hover {
 .modal-content {
 	border-width: 0px !important;
 	background: none !important;
-}
-
-/* Colors */
-
-.Color--home {
-	background: rgb(255, 208, 55);
-	background: linear-gradient(
-		135deg,
-		rgba(255, 208, 55, 1) 45%,
-		rgba(255, 115, 167, 1) 100%
-	);
-}
-
-.Color--screenshot {
-	background: rgb(255, 198, 53);
-	background: linear-gradient(
-		180deg,
-		rgba(255, 198, 53, 1) 20%,
-		rgb(255, 154, 60) 100%
-	);
-}
-
-.Color--musicplayer {
-	background: rgb(255, 124, 124);
-	background: radial-gradient(
-		circle,
-		rgba(255, 124, 124, 1) 20%,
-		rgba(255, 82, 117, 1) 90%
-	);
-}
-
-.Color--recorder {
-	background: rgb(187, 79, 79);
-	background: radial-gradient(
-		circle,
-		rgba(187, 79, 79, 1) 20%,
-		rgba(33, 14, 18, 1) 70%
-	);
-}
-
-.Color--camera {
-	background: rgb(80, 80, 80);
-	background: linear-gradient(
-		117deg,
-		rgba(80, 80, 80, 1) 25%,
-		rgba(60, 60, 60, 1) 70%
-	);
-}
-
-.Color--browser {
-	background: rgb(32, 86, 108);
-	background: linear-gradient(
-		117deg,
-		rgba(32, 86, 108, 1) 20%,
-		rgba(154, 37, 37, 1) 80%
-	);
 }

@@ -30,7 +30,7 @@ export default function ColorGenerator() {
 	return (
 		<>
 			<Head>
-				<title>Color Generator | LogicUI</title>
+				<title>Material 3 Color Generator | LogicUI</title>
 				<meta
 					name="viewport"
 					content="initial-scale=1.0, width=device-width"
@@ -62,9 +62,9 @@ export default function ColorGenerator() {
 						marginBottom: 20,
 					}}
 				>
-					Select the key colors for your app by clicking on the boxes
-					on the left. These colors are used to generate a color
-					palette based on the Material Design 3 guidelines.
+					Select the key colors for your app. These colors are used to
+					generate a color palette based on the Material Design 3
+					guidelines.
 				</p>
 				<MainSetup
 					primary={primary}

@@ -65,7 +65,7 @@ export default function MainSetup({
 			<Row>
 				<Col xs={12} md={4} xl={3}>
 					<p style={{ fontSize: 17, marginBottom: 5 }}>
-						Obtain light main from
+						Obtain main color from
 					</p>
 				</Col>
 				<Col xs={12} md={8} xl={9}>
