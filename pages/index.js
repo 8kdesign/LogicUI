@@ -17,6 +17,8 @@ import ImageRecorderBanner from "../assets/logicui/recorder/banner.jpg";
 import ImageLMPBanner from "../assets/logicui/lmp/banner.jpg";
 import ImageLectureRecorderBanner from "../assets/logicui/lecture_recorder/banner.jpg";
 
+import ImageColorGeneratorBanner from "../assets/tools/colorgenerator/banner.jpg";
+
 export default function LogicUI() {
 	return (
 		<>
@@ -40,19 +42,30 @@ export default function LogicUI() {
 					content="https://firebasestorage.googleapis.com/v0/b/logicui-9667a.appspot.com/o/others%2Flogicui_banner.png?alt=media&token=506832a0-2425-4125-b0b8-13e3e8266dff"
 				/>
 			</Head>
-			<Container>
+			<Container style={{ paddingTop: 50, paddingBottom: 50 }}>
 				<div className="Container--space-between">
-					<p style={{ marginLeft: 20, fontSize: 21 }}>Android Apps</p>
+					<p style={{ marginLeft: 20, fontSize: 27 }}>Android Apps</p>
 				</div>
 				<Row style={{ margin: 0 }}>
-					<Content />
+					<AppContent />
+				</Row>
+				<br />
+				<div className="Line--horizontal" />
+				<br />
+				<div className="Container--space-between">
+					<p style={{ marginLeft: 20, fontSize: 27 }}>
+						Tools by LogicUI
+					</p>
+				</div>
+				<Row style={{ margin: 0 }}>
+					<ToolContent />
 				</Row>
 			</Container>
 		</>
 	);
 }
 
-function Content() {
+function AppContent() {
 	const array = [];
 	apps.forEach((app) => {
 		array.push(
@@ -132,6 +145,55 @@ function Content() {
 	return array;
 }
 
+function ToolContent() {
+	const array = [];
+	tools.forEach((tool) => {
+		array.push(
+			<Col xs={12} md={6} lg={4} style={{ padding: 0 }} key={tool.name}>
+				<Link href={"/tools/" + tool.codename}>
+					<div
+						className="Toggle"
+						style={{
+							padding: 20,
+						}}
+					>
+						<Image
+							src={tool.banner}
+							className="Image--app-icon"
+							objectFit="fill"
+						/>
+						<div
+							className="Contianer--column"
+							style={{ marginTop: 10 }}
+						>
+							<p
+								style={{
+									fontSize: 21,
+									width: "100%",
+									fontWeight: 500,
+									marginBottom: 5,
+								}}
+							>
+								{tool.name}
+							</p>
+							<p
+								style={{
+									fontSize: 17,
+									width: "100%",
+									fontWeight: 300,
+								}}
+							>
+								{tool.description}
+							</p>
+						</div>
+					</div>
+				</Link>
+			</Col>
+		);
+	});
+	return array;
+}
+
 export const apps = [
 	{
 		image: ImageTVBrowserLogo,
@@ -188,5 +250,15 @@ export const apps = [
 		description:
 			"DISCONTINUED. Camera app concept designed for one-handed use, from shuttle to focus and exposure.",
 		link: "https://play.google.com/store/apps/details?id=com.logicui.logicuicamera",
+	},
+];
+
+export const tools = [
+	{
+		banner: ImageColorGeneratorBanner,
+		codename: "colorgenerator",
+		name: "Material 3 Color Generator",
+		description:
+			"Tool for generating colors for Material Design 3 and exporting to Android Studio.",
 	},
 ];

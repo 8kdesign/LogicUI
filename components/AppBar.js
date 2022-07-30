@@ -5,7 +5,7 @@ export default function AppBar() {
 	return (
 		<div className="Container--navbar">
 			<Container>
-				<div style={{ cursor: "pointer" }}>
+				<div style={{ cursor: "pointer", zIndex: 10 }}>
 					<Link href="/">
 						<p
 							style={{
@@ -13,6 +13,7 @@ export default function AppBar() {
 								fontWeight: 400,
 								color: "#aaaaaa",
 								userSelect: "none",
+								textAlign: "center",
 							}}
 						>
 							<b style={{ color: "#3b3b3b" }}>Logic </b>UI
