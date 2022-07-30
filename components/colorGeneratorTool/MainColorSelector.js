@@ -115,6 +115,9 @@ export default function MainColorSelector({
 							flexDirection: "column",
 							alignItems: "center",
 						}}
+						onClick={() => {
+							setShowSelector(false);
+						}}
 					>
 						<div
 							style={{
@@ -122,7 +125,22 @@ export default function MainColorSelector({
 								background: "white",
 								borderRadius: 10,
 							}}
+							onClick={(event) => {
+								event.stopPropagation();
+							}}
 						>
+							<div
+								style={{
+									width: 200,
+									height: 30,
+									background: main,
+									borderRadius: 5,
+									borderWidth: 1,
+									borderStyle: "solid",
+									borderColor: "#AAAAAA",
+									margin: 5,
+								}}
+							/>
 							<HexColorPicker
 								color={main}
 								onChange={(color) => {

@@ -96,6 +96,9 @@ export default function ColorPalette({ colors, setColors, name }) {
 							flexDirection: "column",
 							alignItems: "center",
 						}}
+						onClick={() => {
+							setShowSelector(null);
+						}}
 					>
 						<div
 							style={{
@@ -103,7 +106,22 @@ export default function ColorPalette({ colors, setColors, name }) {
 								background: "white",
 								borderRadius: 10,
 							}}
+							onClick={(event) => {
+								event.stopPropagation();
+							}}
 						>
+							<div
+								style={{
+									width: 200,
+									height: 30,
+									background: colors[showSelector],
+									borderRadius: 5,
+									borderWidth: 1,
+									borderStyle: "solid",
+									borderColor: "#AAAAAA",
+									margin: 5,
+								}}
+							/>
 							<HexColorPicker
 								color={colors[showSelector]}
 								onChange={(color) => {

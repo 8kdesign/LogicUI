@@ -109,7 +109,7 @@ export default function Export({
 				padding: 20,
 				background: "#E3ECF0",
 				borderRadius: 10,
-				marginBottom: 100,
+				marginBottom: 50,
 			}}
 		>
 			<div
