@@ -179,7 +179,14 @@ function TonePreview({ cmyk, percent }) {
 				justifyContent: "center",
 			}}
 		>
-			<p style={{ color: textColor, fontSize: 13, marginBottom: 0 }}>
+			<p
+				style={{
+					color: textColor,
+					fontSize: 13,
+					marginBottom: 0,
+					userSelect: "none",
+				}}
+			>
 				{percent * 100}
 			</p>
 		</Col>
