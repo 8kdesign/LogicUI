@@ -11,42 +11,45 @@ export default function MainSetup({
 	setSecondary,
 	setTertiary,
 	setError,
+	setPrimaryDark,
+	setSecondaryDark,
+	setTertiaryDark,
+	setErrorDark,
 }) {
 	const [core, setCore] = useState(0);
-	const [container, setContainer] = useState(1);
 
 	return (
 		<div style={{ padding: 20, background: "#E3ECF0", borderRadius: 10 }}>
 			<MainColorSelector
 				colors={primary}
 				setColors={setPrimary}
+				setColorsDark={setPrimaryDark}
 				name={"Primary"}
 				core={core}
-				container={container}
 			/>
 			<br />
 			<MainColorSelector
 				colors={secondary}
 				setColors={setSecondary}
+				setColorsDark={setSecondaryDark}
 				name={"Secondary"}
 				core={core}
-				container={container}
 			/>
 			<br />
 			<MainColorSelector
 				colors={tertiary}
 				setColors={setTertiary}
+				setColorsDark={setTertiaryDark}
 				name={"Tertiary"}
 				core={core}
-				container={container}
 			/>
 			<br />
 			<MainColorSelector
 				colors={error}
 				setColors={setError}
+				setColorsDark={setErrorDark}
 				name={"Error"}
 				core={core}
-				container={container}
 			/>
 			<br />
 			<div className="Line--horizontal" />
@@ -54,7 +57,7 @@ export default function MainSetup({
 			<Row>
 				<Col xs={12} md={4} xl={3}>
 					<p style={{ fontSize: 17, marginBottom: 5 }}>
-						Obtain Main From
+						Obtain light main from
 					</p>
 				</Col>
 				<Col xs={12} md={8} xl={9}>
@@ -127,66 +130,6 @@ export default function MainSetup({
 							/>
 							<p style={{ marginRight: 30, marginBottom: 0 }}>
 								50
-							</p>
-						</div>
-					</div>
-				</Col>
-			</Row>
-			<Row style={{ marginTop: 10 }}>
-				<Col xs={12} md={4} xl={3}>
-					<p style={{ fontSize: 17, marginBottom: 5 }}>
-						Obtain Container From
-					</p>
-				</Col>
-				<Col xs={12} md={8} xl={9}>
-					<div
-						style={{
-							overflowX: "auto",
-							display: "flex",
-							flexDirection: "row",
-							alignItems: "center",
-						}}
-					>
-						<div
-							className="Toggle"
-							style={{
-								display: "flex",
-								flexDirection: "row",
-								alignItems: "center",
-							}}
-							onClick={() => {
-								setContainer(0);
-							}}
-						>
-							<input
-								type="radio"
-								style={{ marginRight: 10 }}
-								checked={container === 0}
-								onChange={() => {}}
-							/>
-							<p style={{ marginRight: 30, marginBottom: 0 }}>
-								10
-							</p>
-						</div>
-						<div
-							className="Toggle"
-							style={{
-								display: "flex",
-								flexDirection: "row",
-								alignItems: "center",
-							}}
-							onClick={() => {
-								setContainer(1);
-							}}
-						>
-							<input
-								type="radio"
-								style={{ marginRight: 10 }}
-								checked={container === 1}
-								onChange={() => {}}
-							/>
-							<p style={{ marginRight: 30, marginBottom: 0 }}>
-								20
 							</p>
 						</div>
 					</div>

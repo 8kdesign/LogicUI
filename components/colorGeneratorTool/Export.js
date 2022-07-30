@@ -9,6 +9,12 @@ export default function Export({
 	error,
 	background,
 	outline,
+	primaryDark,
+	secondaryDark,
+	tertiaryDark,
+	errorDark,
+	backgroundDark,
+	outlineDark,
 }) {
 	const [mode, setMode] = useState(0);
 
@@ -27,13 +33,28 @@ export default function Export({
 					setMode(i);
 				}}
 			>
-				<input
-					type="radio"
-					style={{ marginRight: 10 }}
-					checked={mode === i}
-					onChange={() => {}}
-				/>
-				<p style={{ marginRight: 30, marginBottom: 0 }}>{modes[i]}</p>
+				{i === mode ? (
+					<p
+						style={{
+							marginBottom: 0,
+							color: "white",
+							background: "#307987",
+							padding: "5px 20px",
+							borderRadius: 5,
+						}}
+					>
+						{modes[i]}
+					</p>
+				) : (
+					<p
+						style={{
+							marginBottom: 0,
+							padding: "5px 20px",
+						}}
+					>
+						{modes[i]}
+					</p>
+				)}
 			</div>
 		);
 	}
@@ -49,6 +70,12 @@ export default function Export({
 						error={error}
 						background={background}
 						outline={outline}
+						primaryDark={primaryDark}
+						secondaryDark={secondaryDark}
+						tertiaryDark={tertiaryDark}
+						errorDark={errorDark}
+						backgroundDark={backgroundDark}
+						outlineDark={outlineDark}
 					/>
 				);
 			}
@@ -61,6 +88,12 @@ export default function Export({
 						error={error}
 						background={background}
 						outline={outline}
+						primaryDark={primaryDark}
+						secondaryDark={secondaryDark}
+						tertiaryDark={tertiaryDark}
+						errorDark={errorDark}
+						backgroundDark={backgroundDark}
+						outlineDark={outlineDark}
 					/>
 				);
 			}

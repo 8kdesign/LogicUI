@@ -5,6 +5,12 @@ export default function ExportCompose({
 	error,
 	background,
 	outline,
+	primaryDark,
+	secondaryDark,
+	tertiaryDark,
+	errorDark,
+	backgroundDark,
+	outlineDark,
 }) {
 	return (
 		<div style={{ whiteSpace: "pre" }}>
@@ -29,7 +35,7 @@ export default function ExportCompose({
 						")\n" +
 						"val OnPrimaryContainer = Color(0xFF" +
 						primary[3].substring(1) +
-						")\n\n" +
+						")\n" +
 						"val Secondary = Color(0xFF" +
 						secondary[0].substring(1) +
 						")\n" +
@@ -41,7 +47,7 @@ export default function ExportCompose({
 						")\n" +
 						"val OnSecondaryContainer = Color(0xFF" +
 						secondary[3].substring(1) +
-						")\n\n" +
+						")\n" +
 						"val Tertiary = Color(0xFF" +
 						tertiary[0].substring(1) +
 						")\n" +
@@ -53,7 +59,7 @@ export default function ExportCompose({
 						")\n" +
 						"val OnTertiaryContainer = Color(0xFF" +
 						tertiary[3].substring(1) +
-						")\n\n" +
+						")\n" +
 						"val Error = Color(0xFF" +
 						error[0].substring(1) +
 						")\n" +
@@ -65,7 +71,7 @@ export default function ExportCompose({
 						")\n" +
 						"val OnErrorContainer = Color(0xFF" +
 						error[3].substring(1) +
-						")\n\n" +
+						")\n" +
 						"val Background = Color(0xFF" +
 						background[0].substring(1) +
 						")\n" +
@@ -86,6 +92,75 @@ export default function ExportCompose({
 						")\n" +
 						"val Outline = Color(0xFF" +
 						outline[2].substring(1) +
+						")\n\n" +
+						"val PrimaryDark = Color(0xFF" +
+						primaryDark[0].substring(1) +
+						")\n" +
+						"val OnPrimaryDark = Color(0xFF" +
+						primaryDark[1].substring(1) +
+						")\n" +
+						"val PrimaryContainerDark = Color(0xFF" +
+						primaryDark[2].substring(1) +
+						")\n" +
+						"val OnPrimaryContainerDark = Color(0xFF" +
+						primaryDark[3].substring(1) +
+						")\n" +
+						"val SecondaryDark = Color(0xFF" +
+						secondaryDark[0].substring(1) +
+						")\n" +
+						"val OnSecondaryDark = Color(0xFF" +
+						secondaryDark[1].substring(1) +
+						")\n" +
+						"val SecondaryContainerDark = Color(0xFF" +
+						secondaryDark[2].substring(1) +
+						")\n" +
+						"val OnSecondaryContainerDark = Color(0xFF" +
+						secondaryDark[3].substring(1) +
+						")\n" +
+						"val TertiaryDark = Color(0xFF" +
+						tertiaryDark[0].substring(1) +
+						")\n" +
+						"val OnTertiaryDark = Color(0xFF" +
+						tertiaryDark[1].substring(1) +
+						")\n" +
+						"val TertiaryContainerDark = Color(0xFF" +
+						tertiaryDark[2].substring(1) +
+						")\n" +
+						"val OnTertiaryContainerDark = Color(0xFF" +
+						tertiaryDark[3].substring(1) +
+						")\n" +
+						"val ErrorDark = Color(0xFF" +
+						errorDark[0].substring(1) +
+						")\n" +
+						"val OnErrorDark = Color(0xFF" +
+						errorDark[1].substring(1) +
+						")\n" +
+						"val ErrorContainerDark = Color(0xFF" +
+						errorDark[2].substring(1) +
+						")\n" +
+						"val OnErrorContainerDark = Color(0xFF" +
+						errorDark[3].substring(1) +
+						")\n" +
+						"val BackgroundDark = Color(0xFF" +
+						backgroundDark[0].substring(1) +
+						")\n" +
+						"val OnBackgroundDark = Color(0xFF" +
+						backgroundDark[1].substring(1) +
+						")\n" +
+						"val SurfaceDark = Color(0xFF" +
+						backgroundDark[2].substring(1) +
+						")\n" +
+						"val OnSurfaceDark = Color(0xFF" +
+						backgroundDark[3].substring(1) +
+						")\n" +
+						"val SurfaceVariantDark = Color(0xFF" +
+						outlineDark[0].substring(1) +
+						")\n" +
+						"val OnSurfaceVariantDark = Color(0xFF" +
+						outlineDark[1].substring(1) +
+						")\n" +
+						"val OutlineDark = Color(0xFF" +
+						outlineDark[2].substring(1) +
 						")\n"}
 				</p>
 			</div>
@@ -131,6 +206,31 @@ export default function ExportCompose({
 						"    surfaceVariant = SurfaceVariant,\n" +
 						"    onSurfaceVariant = OnSurfaceVariant,\n" +
 						"    outline = Outline\n" +
+						")\n\n" +
+						"private val darkColorScheme = darkColorScheme(\n" +
+						"    primary = PrimaryDark,\n" +
+						"    onPrimary = OnPrimaryDark,\n" +
+						"    primaryContainer = PrimaryContainerDark,\n" +
+						"    onPrimaryContainer = OnPrimaryContainerDark,\n" +
+						"    secondary = SecondaryDark,\n" +
+						"    onSecondary = OnSecondaryDark,\n" +
+						"    secondaryContainer = SecondaryContainerDark,\n" +
+						"    onSecondaryContainer = OnSecondaryContainerDark,\n" +
+						"    tertiary = TertiaryDark,\n" +
+						"    onTertiary = OnTertiaryDark,\n" +
+						"    tertiaryContainer = TertiaryContainerDark,\n" +
+						"    onTertiaryContainer = OnTertiaryContainerDark,\n" +
+						"    error = ErrorDark,\n" +
+						"    onError = OnErrorDark,\n" +
+						"    errorContainer = ErrorContainerDark,\n" +
+						"    onErrorContainer = OnErrorContainerDark,\n" +
+						"    background = BackgroundDark,\n" +
+						"    onBackground = OnBackgroundDark,\n" +
+						"    surface = SurfaceDark,\n" +
+						"    onSurface = OnSurfaceDark,\n" +
+						"    surfaceVariant = SurfaceVariantDark,\n" +
+						"    onSurfaceVariant = OnSurfaceVariantDark,\n" +
+						"    outline = OutlineDark\n" +
 						")"}
 				</p>
 			</div>

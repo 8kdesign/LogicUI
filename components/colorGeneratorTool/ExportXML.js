@@ -5,6 +5,12 @@ export default function ExportXML({
 	error,
 	background,
 	outline,
+	primaryDark,
+	secondaryDark,
+	tertiaryDark,
+	errorDark,
+	backgroundDark,
+	outlineDark,
 }) {
 	return (
 		<div style={{ whiteSpace: "pre" }}>
@@ -88,6 +94,92 @@ export default function ExportXML({
 						"</color>\n" +
 						'    <color name="outline">' +
 						outline[2] +
+						"</color>\n" +
+						"</resources>"}
+				</p>
+			</div>
+			<p style={{ fontSize: 27, marginBottom: 10, marginTop: 40 }}>
+				{"Replace colors.xml (Night)"}
+			</p>
+			<div
+				style={{
+					background: "#FAFAFA",
+					overflowX: "auto",
+					borderRadius: 10,
+					padding: 20,
+				}}
+			>
+				<p>
+					{'<?xml version="1.0" encoding="utf-8"?>\n' +
+						"<resources>\n" +
+						'    <color name="primary">' +
+						primaryDark[0] +
+						"</color>\n" +
+						'    <color name="onPrimary">' +
+						primaryDark[1] +
+						"</color>\n" +
+						'    <color name="primaryContainer">' +
+						primaryDark[2] +
+						"</color>\n" +
+						'    <color name="onPrimaryContainer">' +
+						primaryDark[3] +
+						"</color>\n" +
+						'    <color name="secondary">' +
+						secondaryDark[0] +
+						"</color>\n" +
+						'    <color name="onSecondary">' +
+						secondaryDark[1] +
+						"</color>\n" +
+						'    <color name="secondaryContainer">' +
+						secondaryDark[2] +
+						"</color>\n" +
+						'    <color name="onSecondaryContainer">' +
+						secondaryDark[3] +
+						"</color>\n" +
+						'    <color name="tertiary">' +
+						tertiaryDark[0] +
+						"</color>\n" +
+						'    <color name="onTertiary">' +
+						tertiaryDark[1] +
+						"</color>\n" +
+						'    <color name="tertiaryContainer">' +
+						tertiaryDark[2] +
+						"</color>\n" +
+						'    <color name="onTertiaryContainer">' +
+						tertiaryDark[3] +
+						"</color>\n" +
+						'    <color name="error">' +
+						errorDark[0] +
+						"</color>\n" +
+						'    <color name="onError">' +
+						errorDark[1] +
+						"</color>\n" +
+						'    <color name="errorContainer">' +
+						errorDark[2] +
+						"</color>\n" +
+						'    <color name="onErrorContainer">' +
+						errorDark[3] +
+						"</color>\n" +
+						'    <color name="background">' +
+						backgroundDark[0] +
+						"</color>\n" +
+						'    <color name="onBackground">' +
+						backgroundDark[1] +
+						"</color>\n" +
+						'    <color name="surface">' +
+						backgroundDark[2] +
+						"</color>\n" +
+						'    <color name="onSurface">' +
+						backgroundDark[3] +
+						"</color>\n" +
+						'    <color name="surfaceVariant">' +
+						outlineDark[0] +
+						"</color>\n" +
+						'    <color name="onSurfaceVariant">' +
+						outlineDark[1] +
+						"</color>\n" +
+						'    <color name="outline">' +
+						outlineDark[2] +
 						"</color>\n" +
 						"</resources>"}
 				</p>

@@ -5,9 +5,9 @@ import { HexColorPicker } from "react-colorful";
 export default function MainColorSelector({
 	colors,
 	setColors,
+	setColorsDark,
 	name,
 	core,
-	container,
 }) {
 	const [main, setMain] = useState(colors[0]);
 	const [showSelector, setShowSelector] = useState(false);
@@ -22,6 +22,7 @@ export default function MainColorSelector({
 
 	useEffect(() => {
 		if (colors.length !== 4) return;
+		// Light
 		const newColors = [];
 		switch (core) {
 			case 1: {
@@ -40,15 +41,16 @@ export default function MainColorSelector({
 		}
 		newColors.push("#FFFFFF");
 		newColors.push(getHex(cmyk, 1 - 0.9).toUpperCase());
-		if (container === 1) {
-			const main20 = getHex(cmyk, 1 - 0.2).toUpperCase();
-			newColors.push(main20);
-		} else {
-			const main10 = getHex(cmyk, 1 - 0.1).toUpperCase();
-			newColors.push(main10);
-		}
+		newColors.push(getHex(cmyk, 1 - 0.1).toUpperCase());
 		setColors(newColors);
-	}, [main, core, container]);
+		// Dark
+		const newColorsDark = [];
+		newColorsDark.push(getHex(cmyk, 1 - 0.8).toUpperCase());
+		newColorsDark.push(getHex(cmyk, 1 - 0.2).toUpperCase());
+		newColorsDark.push(getHex(cmyk, 1 - 0.3).toUpperCase());
+		newColorsDark.push(getHex(cmyk, 1 - 0.9).toUpperCase());
+		setColorsDark(newColorsDark);
+	}, [main, core]);
 
 	return (
 		<Row>
@@ -207,7 +209,10 @@ function getRGBString(cmyk, percent) {
 	var c = cmyk.c / 100;
 	var m = cmyk.m / 100;
 	var y = cmyk.y / 100;
-	const k = percent;
+	var k = percent;
+	if (k >= 0.1 && k < 1) {
+		k -= 0.1;
+	}
 	if (percent < 0.5) {
 		c *= Math.sqrt(percent);
 		m *= Math.sqrt(percent);
@@ -231,7 +236,10 @@ function getHex(cmyk, percent) {
 	var c = cmyk.c / 100;
 	var m = cmyk.m / 100;
 	var y = cmyk.y / 100;
-	const k = percent;
+	var k = percent;
+	if (k >= 0.1 && k < 1) {
+		k -= 0.1;
+	}
 	if (percent < 0.5) {
 		c *= Math.sqrt(percent);
 		m *= Math.sqrt(percent);
