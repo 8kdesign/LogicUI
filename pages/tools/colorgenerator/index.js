@@ -14,105 +14,131 @@ export default function ColorGenerator() {
 	const [outline, setOutline] = useState(defaultColors[5]);
 
 	return (
-		<Container>
-			<ToolHeader tool={tool} />
-			<p style={{ fontSize: 27, marginTop: 20, marginBottom: 0 }}>
-				{"1) Select Main Colors"}
-			</p>
-			<p
-				style={{
-					fontSize: 17,
-					fontWeight: 300,
-					marginTop: 10,
-					marginBottom: 20,
-				}}
-			>
-				Selected the key colors for your app. These colors will be used
-				to generate a suggested color palette.
-			</p>
-			<MainSetup
-				primary={primary}
-				secondary={secondary}
-				tertiary={tertiary}
-				error={error}
-				setPrimary={setPrimary}
-				setSecondary={setSecondary}
-				setTertiary={setTertiary}
-				setError={setError}
-			/>
-			<br />
-			<p style={{ fontSize: 27, marginTop: 20, marginBottom: 0 }}>
-				{"2) Preview & Modify Colors"}
-			</p>
-			<p
-				style={{
-					fontSize: 17,
-					fontWeight: 300,
-					marginTop: 10,
-					marginBottom: 20,
-				}}
-			>
-				Preview and modify the color palette before exporting.
-			</p>
-			<div
-				style={{ padding: 20, background: "#E3ECF0", borderRadius: 10 }}
-			>
-				<ColorPalette
-					colors={primary}
-					setColors={setPrimary}
-					name={names[0]}
+		<>
+			<Head>
+				<title>Color Generator | LogicUI</title>
+				<meta
+					name="viewport"
+					content="initial-scale=1.0, width=device-width"
 				/>
-				<ColorPalette
-					colors={secondary}
-					setColors={setSecondary}
-					name={names[1]}
+				<meta property="og:title" content="Color Generator | LogicUI" />
+				<meta
+					property="description"
+					content="Color generator for Material Design 3"
 				/>
-				<ColorPalette
-					colors={tertiary}
-					setColors={setTertiary}
-					name={names[2]}
+				<meta
+					property="og:description"
+					content="Color generator for Material Design 3"
 				/>
-				<ColorPalette
-					colors={error}
-					setColors={setError}
-					name={names[3]}
+				<meta
+					property="og:image"
+					content="https://firebasestorage.googleapis.com/v0/b/logicui-9667a.appspot.com/o/others%2Fbanner.jpg?alt=media&token=23d3abfa-56cb-41be-857f-e45d9b13413d"
+				/>
+			</Head>
+			<Container>
+				<ToolHeader tool={tool} />
+				<p style={{ fontSize: 27, marginTop: 20, marginBottom: 0 }}>
+					{"1) Select Main Colors"}
+				</p>
+				<p
+					style={{
+						fontSize: 17,
+						fontWeight: 300,
+						marginTop: 10,
+						marginBottom: 20,
+					}}
+				>
+					Selected the key colors for your app. These colors will be
+					used to generate a suggested color palette.
+				</p>
+				<MainSetup
+					primary={primary}
+					secondary={secondary}
+					tertiary={tertiary}
+					error={error}
+					setPrimary={setPrimary}
+					setSecondary={setSecondary}
+					setTertiary={setTertiary}
+					setError={setError}
 				/>
 				<br />
-				<ColorPalette
-					colors={background}
-					setColors={setBackground}
-					name={names[4]}
+				<p style={{ fontSize: 27, marginTop: 20, marginBottom: 0 }}>
+					{"2) Preview & Modify Colors"}
+				</p>
+				<p
+					style={{
+						fontSize: 17,
+						fontWeight: 300,
+						marginTop: 10,
+						marginBottom: 20,
+					}}
+				>
+					Preview and modify the color palette before exporting.
+				</p>
+				<div
+					style={{
+						padding: 20,
+						background: "#E3ECF0",
+						borderRadius: 10,
+					}}
+				>
+					<ColorPalette
+						colors={primary}
+						setColors={setPrimary}
+						name={names[0]}
+					/>
+					<ColorPalette
+						colors={secondary}
+						setColors={setSecondary}
+						name={names[1]}
+					/>
+					<ColorPalette
+						colors={tertiary}
+						setColors={setTertiary}
+						name={names[2]}
+					/>
+					<ColorPalette
+						colors={error}
+						setColors={setError}
+						name={names[3]}
+					/>
+					<br />
+					<ColorPalette
+						colors={background}
+						setColors={setBackground}
+						name={names[4]}
+					/>
+					<ColorPalette
+						colors={outline}
+						setColors={setOutline}
+						name={names[5]}
+					/>
+				</div>
+				<br />
+				<p style={{ fontSize: 27, marginTop: 20, marginBottom: 0 }}>
+					{"3) Export to Code"}
+				</p>
+				<p
+					style={{
+						fontSize: 17,
+						fontWeight: 300,
+						marginTop: 10,
+						marginBottom: 20,
+					}}
+				>
+					Select the platform which you are building for and copy and
+					paste the code below into the specified files.
+				</p>
+				<Export
+					primary={primary}
+					secondary={secondary}
+					tertiary={tertiary}
+					error={error}
+					background={background}
+					outline={outline}
 				/>
-				<ColorPalette
-					colors={outline}
-					setColors={setOutline}
-					name={names[5]}
-				/>
-			</div>
-			<br />
-			<p style={{ fontSize: 27, marginTop: 20, marginBottom: 0 }}>
-				{"3) Export to Code"}
-			</p>
-			<p
-				style={{
-					fontSize: 17,
-					fontWeight: 300,
-					marginTop: 10,
-					marginBottom: 20,
-				}}
-			>
-				Select the platform which you are building for and copy and
-				paste the code below into the specified files.
-			</p>
-			<Export
-				primary={primary}
-				secondary={secondary}
-				tertiary={tertiary}
-				error={error}
-				background={background}
-				outline={outline}
-			/>
-		</Container>
+			</Container>
+		</>
 	);
 }
 
