@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Badge, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import Link from "next/link";
 
 import ImagePlayStore from "../assets/google-play-badge.png";
