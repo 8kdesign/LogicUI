@@ -1,4 +1,5 @@
 import ColorPalette from "./ColorPalette";
+import ComponentPreview from "./ComponentPreview";
 
 export default function Preview({
 	primary,
@@ -42,6 +43,15 @@ export default function Preview({
 				colors={outline}
 				setColors={setOutline}
 				name={names[5]}
+			/>
+			<br />
+			<ComponentPreview
+				primary={primary}
+				secondary={secondary}
+				tertiary={tertiary}
+				error={error}
+				background={background}
+				outline={outline}
 			/>
 		</>
 	);
