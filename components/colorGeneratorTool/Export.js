@@ -152,9 +152,9 @@ export default function Export({
 		>
 			<div
 				style={{
-					overflowX: "auto",
 					display: "flex",
 					flexDirection: "row",
+					flexWrap: "wrap",
 					alignItems: "center",
 				}}
 			>
