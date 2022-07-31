@@ -1,6 +1,4 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+const withCss = require("@zeit/next-css");
+const withPurgeCss = require("next-purgecss");
 
-module.exports = nextConfig
+module.exports = withCss(withPurgeCss());
