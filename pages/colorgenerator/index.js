@@ -52,7 +52,7 @@ export default function ColorGenerator() {
 			<Container>
 				<ToolHeader tool={tool} />
 				<p style={{ fontSize: 27, marginTop: 20, marginBottom: 0 }}>
-					{"1) Select Main Colors"}
+					{"1) Select Key Colors"}
 				</p>
 				<p
 					style={{
@@ -62,9 +62,10 @@ export default function ColorGenerator() {
 						marginBottom: 20,
 					}}
 				>
-					Select the key colors for your app. These colors are used to
-					generate a color palette based on the Material Design 3
-					guidelines.
+					Select the 4 key colors for your app. For each key color, a
+					tonal palette is generated, comprising of similar colors of
+					a different tone. These colors are then used to generate a
+					color palette based on the Material Design 3 guidelines.
 				</p>
 				<MainSetup
 					primary={primary}
