@@ -35,7 +35,10 @@ export default function ColorGenerator() {
 					name="viewport"
 					content="initial-scale=1.0, width=device-width"
 				/>
-				<meta property="og:title" content="Color Generator | LogicUI" />
+				<meta
+					property="og:title"
+					content="Material 3 Color Generator | LogicUI"
+				/>
 				<meta
 					property="description"
 					content="Color generator for Material Design 3"

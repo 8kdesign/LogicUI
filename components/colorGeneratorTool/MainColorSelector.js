@@ -27,6 +27,10 @@ export default function MainColorSelector({
 
 	useEffect(() => {
 		if (colors.length !== 4) return;
+		generateColors();
+	}, [main, core]);
+
+	async function generateColors() {
 		// Light
 		const newColors = [];
 		switch (core) {
@@ -65,7 +69,7 @@ export default function MainColorSelector({
 			return;
 		setNewBackground(cmyk, setBackground, setBackgroundDark);
 		setNewOutline(cmyk, setOutline, setOutlineDark);
-	}, [main, core]);
+	}
 
 	return (
 		<Grid container>
