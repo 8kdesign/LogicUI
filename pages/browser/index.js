@@ -1,4 +1,4 @@
-import { Container, Row } from "react-bootstrap";
+import { Container, Grid } from "@mui/material";
 import AppHeader from "../../components/AppHeader";
 import Feature from "../../components/Feature";
 import { apps } from "../index";
@@ -13,7 +13,7 @@ export default function Browser() {
 	return (
 		<Container>
 			<AppHeader app={apps[0]} />
-			<Row>
+			<Grid container>
 				<Feature
 					image={Image1}
 					header="Easy to Use"
@@ -39,7 +39,7 @@ export default function Browser() {
 					header="Overscan Compensation"
 					content="Not all TVs are built equal. Adjust the size of the screen to ensure that all content are visible. Overscan can be accessed from the main menu."
 				/>
-			</Row>
+			</Grid>
 			<br />
 		</Container>
 	);

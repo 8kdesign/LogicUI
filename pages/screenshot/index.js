@@ -1,4 +1,4 @@
-import { Container, Row } from "react-bootstrap";
+import { Container, Grid } from "@mui/material";
 import AppHeader from "../../components/AppHeader";
 import Feature from "../../components/Feature";
 import { apps } from "../index";
@@ -13,7 +13,7 @@ export default function Screenshot() {
 	return (
 		<Container>
 			<AppHeader app={apps[1]} />
-			<Row>
+			<Grid container>
 				<Feature
 					image={Image1}
 					header="Transparent Background"
@@ -39,7 +39,7 @@ export default function Screenshot() {
 					header="3D Frames"
 					content="If you need something more fanciful, there is a 3D mode that allows you to rotate the device, or even adjust the fold angle!"
 				/>
-			</Row>
+			</Grid>
 			<br />
 		</Container>
 	);

@@ -1,4 +1,4 @@
-import { Container, Row } from "react-bootstrap";
+import { Container, Grid } from "@mui/material";
 import AppHeader from "../../components/AppHeader";
 import Feature from "../../components/Feature";
 import { apps } from "../index";
@@ -11,7 +11,7 @@ export default function Camera() {
 	return (
 		<Container>
 			<AppHeader app={apps[5]} />
-			<Row>
+			<Grid container>
 				<Feature
 					image={Image1}
 					header="One-Handed Focus"
@@ -27,7 +27,7 @@ export default function Camera() {
 					header="Smiling Selfies"
 					content="Enable smile detection to automatically capture a shot when the subject is smiling."
 				/>
-			</Row>
+			</Grid>
 			<br />
 		</Container>
 	);

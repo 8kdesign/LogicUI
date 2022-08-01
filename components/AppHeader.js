@@ -1,12 +1,13 @@
 import Image from "next/image";
-import { Badge, Row, Col } from "react-bootstrap";
+import { Grid } from "@mui/material";
 import Link from "next/link";
 
 import ImagePlayStore from "../assets/google-play-badge.png";
 
 export default function AppHeader({ app }) {
 	return (
-		<Row
+		<Grid
+			container
 			style={{
 				paddingTop: 50,
 				paddingBottom: 50,
@@ -15,12 +16,18 @@ export default function AppHeader({ app }) {
 				userSelect: "none",
 			}}
 		>
-			<Col xs={6} sm={3} lg={2} style={{ marginBottom: 20, padding: 0 }}>
+			<Grid
+				item
+				xs={6}
+				sm={3}
+				lg={2}
+				style={{ marginBottom: 20, padding: 0 }}
+			>
 				<div style={{ maxWidth: 150, marginTop: 10, marginRight: 40 }}>
 					<Image src={app.image} className="Image--app-icon" />
 				</div>
-			</Col>
-			<Col xs={12} md={9} lg={10} style={{ padding: 0 }}>
+			</Grid>
+			<Grid item xs={12} md={9} lg={10} style={{ padding: 0 }}>
 				<p
 					style={{
 						fontSize: 65,
@@ -60,7 +67,7 @@ export default function AppHeader({ app }) {
 						</a>
 					</Link>
 				</div>
-			</Col>
-		</Row>
+			</Grid>
+		</Grid>
 	);
 }

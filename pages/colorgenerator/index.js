@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useState } from "react";
-import { Container } from "react-bootstrap";
+import { Container } from "@mui/material";
 import DarkModeSelector from "../../components/colorGeneratorTool/DarkModeSelector";
 import Export from "../../components/colorGeneratorTool/Export";
 import MainSetup from "../../components/colorGeneratorTool/MainSetup";

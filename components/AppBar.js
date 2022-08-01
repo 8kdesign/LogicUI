@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+import { Container } from "@mui/material";
 import Link from "next/link";
 
 export default function AppBar() {
@@ -15,6 +15,7 @@ export default function AppBar() {
 								userSelect: "none",
 								textAlign: "center",
 								marginBottom: 0,
+								marginTop: 0,
 							}}
 						>
 							<b style={{ color: "#3b3b3b" }}>Logic </b>UI

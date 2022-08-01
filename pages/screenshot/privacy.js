@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+import { Container } from "@mui/material";
 import AppHeader from "../../components/AppHeader";
 import { apps } from "../index";
 import PrivacyPolicy from "../../components/PrivacyPolicy.js";

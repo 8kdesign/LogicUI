@@ -1,4 +1,4 @@
-import { Files } from "react-bootstrap-icons";
+import { CopyAllRounded } from "@mui/icons-material";
 import { toast } from "react-hot-toast";
 
 export default function ExportXML({
@@ -192,9 +192,8 @@ export default function ExportXML({
 		<div>
 			<p style={{ fontSize: 27, marginBottom: 10 }}>
 				Step #1: Replace colors.xml
-				<Files
+				<CopyAllRounded
 					className="Toggle"
-					size={20}
 					style={{ marginLeft: 10 }}
 					onClick={() => {
 						navigator.clipboard.writeText(step1);
@@ -215,9 +214,8 @@ export default function ExportXML({
 			</div>
 			<p style={{ fontSize: 27, marginBottom: 10, marginTop: 40 }}>
 				{"Step #2: Replace colors.xml (Night)"}
-				<Files
+				<CopyAllRounded
 					className="Toggle"
-					size={20}
 					style={{ marginLeft: 10 }}
 					onClick={() => {
 						navigator.clipboard.writeText(step2);
@@ -244,9 +242,8 @@ export default function ExportXML({
 				}}
 			>
 				Step #3: Add to theme in themes.xml
-				<Files
+				<CopyAllRounded
 					className="Toggle"
-					size={20}
 					style={{ marginLeft: 10 }}
 					onClick={() => {
 						navigator.clipboard.writeText(step3);

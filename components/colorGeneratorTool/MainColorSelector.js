@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Row, Col, Modal, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Grid, Modal, Box, Tooltip } from "@mui/material";
 import { HexColorPicker } from "react-colorful";
 import { toast } from "react-hot-toast";
 
@@ -68,8 +68,8 @@ export default function MainColorSelector({
 	}, [main, core]);
 
 	return (
-		<Row>
-			<Col xs={12} md={4} lg={3} xl={2}>
+		<Grid container>
+			<Grid item xs={12} md={4} lg={3} xl={2}>
 				<div
 					className="Container--row"
 					style={{ alignItems: "center", height: 50 }}
@@ -93,9 +93,9 @@ export default function MainColorSelector({
 						}}
 					/>
 				</div>
-			</Col>
-			<Col xs={12} md={8} lg={9} xl={10}>
-				<Row style={{ paddingLeft: 10, paddingRight: 10 }}>
+			</Grid>
+			<Grid item xs={12} md={8} lg={9} xl={10}>
+				<Grid container style={{ paddingLeft: 10, paddingRight: 10 }}>
 					<TonePreview cmyk={cmyk} percent={0} />
 					<TonePreview cmyk={cmyk} percent={0.1} />
 					<TonePreview cmyk={cmyk} percent={0.2} />
@@ -108,11 +108,11 @@ export default function MainColorSelector({
 					<TonePreview cmyk={cmyk} percent={0.9} />
 					<TonePreview cmyk={cmyk} percent={0.95} />
 					<TonePreview cmyk={cmyk} percent={0.99} />
-				</Row>
-			</Col>
+				</Grid>
+			</Grid>
 			<Modal
-				show={showSelector}
-				onHide={() => {
+				open={showSelector}
+				onClose={() => {
 					setShowSelector(false);
 				}}
 				centered
@@ -123,72 +123,79 @@ export default function MainColorSelector({
 					justifyContent: "center",
 				}}
 			>
-				{!showSelector ? null : (
-					<div
-						style={{
-							display: "flex",
-							flexDirection: "column",
-							alignItems: "center",
-						}}
-						onClick={() => {
-							setShowSelector(false);
-						}}
-					>
+				<Box style={{ outline: "none" }}>
+					{!showSelector ? null : (
 						<div
 							style={{
-								width: 210,
-								background: "white",
-								borderRadius: 10,
+								display: "flex",
+								flexDirection: "column",
+								alignItems: "center",
 							}}
-							onClick={(event) => {
-								event.stopPropagation();
+							onClick={() => {
+								setShowSelector(false);
 							}}
 						>
 							<div
 								style={{
-									width: 200,
-									height: 30,
-									background: main,
-									borderRadius: 5,
-									borderWidth: 1,
-									borderStyle: "solid",
-									borderColor: "#AAAAAA",
-									margin: 5,
+									width: 210,
+									background: "white",
+									borderRadius: 10,
 								}}
-							/>
-							<HexColorPicker
-								color={main}
-								onChange={(color) => {
-									setMain(color.toUpperCase());
+								onClick={(event) => {
+									event.stopPropagation();
 								}}
-								style={{ margin: "5px 5px 0px 5px" }}
-							/>
-							<div
-								className="Container--row"
-								style={{ width: 200, padding: 10 }}
 							>
-								<p style={{ marginRight: 5, marginBottom: 0 }}>
-									#
-								</p>
-								<input
-									value={inputValue}
-									onChange={(event) => {
-										const text =
-											event.target.value.toUpperCase();
-										setInputValue(text);
-										const pattern = /^([A-F0-9]{6,6})$/;
-										if (pattern.test(text)) {
-											setMain("#" + text);
-										}
+								<div
+									style={{
+										width: 200,
+										height: 30,
+										background: main,
+										borderRadius: 5,
+										borderWidth: 1,
+										borderStyle: "solid",
+										borderColor: "#AAAAAA",
+										margin: 5,
 									}}
-									className="ClearInput"
 								/>
+								<HexColorPicker
+									color={main}
+									onChange={(color) => {
+										setMain(color.toUpperCase());
+									}}
+									style={{ margin: "5px 5px 0px 5px" }}
+								/>
+								<div
+									className="Container--row"
+									style={{ width: 200, padding: 10 }}
+								>
+									<p
+										style={{
+											marginRight: 5,
+											marginBottom: 0,
+										}}
+									>
+										#
+									</p>
+									<input
+										value={inputValue}
+										onChange={(event) => {
+											const text =
+												event.target.value.toUpperCase();
+											setInputValue(text);
+											const pattern = /^([A-F0-9]{6,6})$/;
+											if (pattern.test(text)) {
+												setMain("#" + text);
+											}
+										}}
+										className="ClearInput"
+									/>
+								</div>
 							</div>
 						</div>
-					</div>
-				)}
+					)}
+				</Box>
 			</Modal>
-		</Row>
+		</Grid>
 	);
 }
 
@@ -201,8 +208,9 @@ function TonePreview({ cmyk, percent }) {
 		textColor = "black";
 	}
 	return (
-		<OverlayTrigger placement="top" overlay={<Tooltip>{color}</Tooltip>}>
-			<Col
+		<Tooltip placement="top" title={color} arrow>
+			<Grid
+				item
 				xs={1}
 				className="Toggle"
 				style={{
@@ -228,8 +236,8 @@ function TonePreview({ cmyk, percent }) {
 				>
 					{percent * 100}
 				</p>
-			</Col>
-		</OverlayTrigger>
+			</Grid>
+		</Tooltip>
 	);
 }
 

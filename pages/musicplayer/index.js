@@ -1,4 +1,4 @@
-import { Container, Row } from "react-bootstrap";
+import { Container, Grid } from "@mui/material";
 import AppHeader from "../../components/AppHeader";
 import Feature from "../../components/Feature";
 import { apps } from "../index";
@@ -13,7 +13,7 @@ export default function MusicPlayers() {
 	return (
 		<Container>
 			<AppHeader app={apps[2]} />
-			<Row>
+			<Grid container>
 				<Feature
 					image={Image1}
 					header="Flexible Playlist"
@@ -39,7 +39,7 @@ export default function MusicPlayers() {
 					header="Chromecast Support"
 					content="LMP supports casting local tracks to any Chromecast device. Simply connect to the device in the music control and start playing."
 				/>
-			</Row>
+			</Grid>
 			<br />
 		</Container>
 	);

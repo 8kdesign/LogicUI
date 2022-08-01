@@ -26,136 +26,330 @@ export default function ExportManual({
 			>
 				<table>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>Primary</th>
-						<th style={{ fontWeight: 400 }}>{primary[0]}</th>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
+							Primary
+						</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{primary[0]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							OnPrimary
 						</th>
-						<th style={{ fontWeight: 400 }}>{primary[1]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{primary[1]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							PrimaryContainer
 						</th>
-						<th style={{ fontWeight: 400 }}>{primary[2]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{primary[2]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							OnPrimaryContainer
 						</th>
-						<th style={{ fontWeight: 400 }}>{primary[3]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{primary[3]}
+						</th>
 					</tr>
 					<br />
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							Secondary
 						</th>
-						<th style={{ fontWeight: 400 }}>{secondary[0]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{secondary[0]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							OnSecondary
 						</th>
-						<th style={{ fontWeight: 400 }}>{secondary[1]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{secondary[1]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							SecondaryContainer
 						</th>
-						<th style={{ fontWeight: 400 }}>{secondary[2]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{secondary[2]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							OnSecondaryContainer
 						</th>
-						<th style={{ fontWeight: 400 }}>{secondary[3]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{secondary[3]}
+						</th>
 					</tr>
 					<br />
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							Tertiary
 						</th>
-						<th style={{ fontWeight: 400 }}>{tertiary[0]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{tertiary[0]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							OnTertiary
 						</th>
-						<th style={{ fontWeight: 400 }}>{tertiary[1]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{tertiary[1]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							TertiaryContainer
 						</th>
-						<th style={{ fontWeight: 400 }}>{tertiary[2]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{tertiary[2]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							OnTertiaryContainer
 						</th>
-						<th style={{ fontWeight: 400 }}>{tertiary[3]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{tertiary[3]}
+						</th>
 					</tr>
 					<br />
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>Error</th>
-						<th style={{ fontWeight: 400 }}>{error[0]}</th>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
+							Error
+						</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{error[0]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>OnError</th>
-						<th style={{ fontWeight: 400 }}>{error[1]}</th>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
+							OnError
+						</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{error[1]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							ErrorContainer
 						</th>
-						<th style={{ fontWeight: 400 }}>{error[2]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{error[2]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							OnErrorContainer
 						</th>
-						<th style={{ fontWeight: 400 }}>{error[3]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{error[3]}
+						</th>
 					</tr>
 					<br />
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							Background
 						</th>
-						<th style={{ fontWeight: 400 }}>{background[0]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{background[0]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							OnBackground
 						</th>
-						<th style={{ fontWeight: 400 }}>{background[1]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{background[1]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>Surface</th>
-						<th style={{ fontWeight: 400 }}>{background[2]}</th>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
+							Surface
+						</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{background[2]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							OnSurface
 						</th>
-						<th style={{ fontWeight: 400 }}>{background[3]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{background[3]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							SurfaceVariant
 						</th>
-						<th style={{ fontWeight: 400 }}>{outline[0]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{outline[0]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							OnSurfaceVariant
 						</th>
-						<th style={{ fontWeight: 400 }}>{outline[1]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{outline[1]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>Outline</th>
-						<th style={{ fontWeight: 400 }}>{outline[2]}</th>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
+							Outline
+						</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{outline[2]}
+						</th>
 					</tr>
 				</table>
 			</div>
@@ -172,136 +366,330 @@ export default function ExportManual({
 			>
 				<table>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>Primary</th>
-						<th style={{ fontWeight: 400 }}>{primaryDark[0]}</th>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
+							Primary
+						</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{primaryDark[0]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							OnPrimary
 						</th>
-						<th style={{ fontWeight: 400 }}>{primaryDark[1]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{primaryDark[1]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							PrimaryContainer
 						</th>
-						<th style={{ fontWeight: 400 }}>{primaryDark[2]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{primaryDark[2]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							OnPrimaryContainer
 						</th>
-						<th style={{ fontWeight: 400 }}>{primaryDark[3]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{primaryDark[3]}
+						</th>
 					</tr>
 					<br />
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							Secondary
 						</th>
-						<th style={{ fontWeight: 400 }}>{secondaryDark[0]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{secondaryDark[0]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							OnSecondary
 						</th>
-						<th style={{ fontWeight: 400 }}>{secondaryDark[1]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{secondaryDark[1]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							SecondaryContainer
 						</th>
-						<th style={{ fontWeight: 400 }}>{secondaryDark[2]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{secondaryDark[2]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							OnSecondaryContainer
 						</th>
-						<th style={{ fontWeight: 400 }}>{secondaryDark[3]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{secondaryDark[3]}
+						</th>
 					</tr>
 					<br />
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							Tertiary
 						</th>
-						<th style={{ fontWeight: 400 }}>{tertiaryDark[0]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{tertiaryDark[0]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							OnTertiary
 						</th>
-						<th style={{ fontWeight: 400 }}>{tertiaryDark[1]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{tertiaryDark[1]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							TertiaryContainer
 						</th>
-						<th style={{ fontWeight: 400 }}>{tertiaryDark[2]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{tertiaryDark[2]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							OnTertiaryContainer
 						</th>
-						<th style={{ fontWeight: 400 }}>{tertiaryDark[3]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{tertiaryDark[3]}
+						</th>
 					</tr>
 					<br />
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>Error</th>
-						<th style={{ fontWeight: 400 }}>{errorDark[0]}</th>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
+							Error
+						</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{errorDark[0]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>OnError</th>
-						<th style={{ fontWeight: 400 }}>{errorDark[1]}</th>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
+							OnError
+						</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{errorDark[1]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							ErrorContainer
 						</th>
-						<th style={{ fontWeight: 400 }}>{errorDark[2]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{errorDark[2]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							OnErrorContainer
 						</th>
-						<th style={{ fontWeight: 400 }}>{errorDark[3]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{errorDark[3]}
+						</th>
 					</tr>
 					<br />
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							Background
 						</th>
-						<th style={{ fontWeight: 400 }}>{backgroundDark[0]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{backgroundDark[0]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							OnBackground
 						</th>
-						<th style={{ fontWeight: 400 }}>{backgroundDark[1]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{backgroundDark[1]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>Surface</th>
-						<th style={{ fontWeight: 400 }}>{backgroundDark[2]}</th>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
+							Surface
+						</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{backgroundDark[2]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							OnSurface
 						</th>
-						<th style={{ fontWeight: 400 }}>{backgroundDark[3]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{backgroundDark[3]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							SurfaceVariant
 						</th>
-						<th style={{ fontWeight: 400 }}>{outlineDark[0]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{outlineDark[0]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
 							OnSurfaceVariant
 						</th>
-						<th style={{ fontWeight: 400 }}>{outlineDark[1]}</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{outlineDark[1]}
+						</th>
 					</tr>
 					<tr>
-						<th style={{ width: 200, fontWeight: 600 }}>Outline</th>
-						<th style={{ fontWeight: 400 }}>{outlineDark[2]}</th>
+						<th
+							style={{
+								width: 200,
+								fontWeight: 600,
+								textAlign: "start",
+							}}
+						>
+							Outline
+						</th>
+						<th style={{ fontWeight: 400, textAlign: "start" }}>
+							{outlineDark[2]}
+						</th>
 					</tr>
 				</table>
 			</div>

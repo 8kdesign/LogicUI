@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Row, Col, Modal } from "react-bootstrap";
+import { Grid, Modal, Box } from "@mui/material";
 import { HexColorPicker } from "react-colorful";
-import { Files } from "react-bootstrap-icons";
+import { ContentCopyRounded } from "@mui/icons-material";
 import { toast } from "react-hot-toast";
 
 export default function ColorPalette({ colors, setColors, name }) {
@@ -27,7 +27,8 @@ export default function ColorPalette({ colors, setColors, name }) {
 			secondColor = colors[i - 1];
 		}
 		array.push(
-			<Col
+			<Grid
+				item
 				xs={12}
 				md={6}
 				lg={3}
@@ -44,13 +45,12 @@ export default function ColorPalette({ colors, setColors, name }) {
 			>
 				<div style={{ position: "relative", height: 100 }}>
 					<p style={{ fontWeight: 300 }}>{name[i]}</p>
-					<Files
+					<ContentCopyRounded
 						style={{
 							position: "absolute",
 							bottom: 0,
 							left: 0,
 						}}
-						size={20}
 						onClick={(event) => {
 							event.stopPropagation();
 							navigator.clipboard.writeText(color);
@@ -70,96 +70,101 @@ export default function ColorPalette({ colors, setColors, name }) {
 						{colors[i]}
 					</p>
 				</div>
-			</Col>
+			</Grid>
 		);
 	}
 	return (
-		<Row style={{ margin: 0 }}>
+		<Grid container style={{ margin: 0 }}>
 			{array}
 			<Modal
-				show={showSelector !== null}
-				onHide={() => {
+				open={showSelector !== null}
+				onClose={() => {
 					setShowSelector(null);
 				}}
-				centered
-				size="sm"
 				style={{
 					display: "flex",
 					alignItems: "center",
 					justifyContent: "center",
 				}}
 			>
-				{showSelector === null ? null : (
-					<div
-						style={{
-							display: "flex",
-							flexDirection: "column",
-							alignItems: "center",
-						}}
-						onClick={() => {
-							setShowSelector(null);
-						}}
-					>
+				<Box style={{ outline: "none" }}>
+					{showSelector === null ? null : (
 						<div
 							style={{
-								width: 210,
-								background: "white",
-								borderRadius: 10,
+								display: "flex",
+								flexDirection: "column",
+								alignItems: "center",
 							}}
-							onClick={(event) => {
-								event.stopPropagation();
+							onClick={() => {
+								setShowSelector(null);
 							}}
 						>
 							<div
 								style={{
-									width: 200,
-									height: 30,
-									background: colors[showSelector],
-									borderRadius: 5,
-									borderWidth: 1,
-									borderStyle: "solid",
-									borderColor: "#AAAAAA",
-									margin: 5,
+									width: 210,
+									background: "white",
+									borderRadius: 10,
 								}}
-							/>
-							<HexColorPicker
-								color={colors[showSelector]}
-								onChange={(color) => {
-									const newColors = [...colors];
-									newColors[showSelector] =
-										color.toUpperCase();
-									setColors(newColors);
+								onClick={(event) => {
+									event.stopPropagation();
 								}}
-								style={{ margin: "5px 5px 0px 5px" }}
-							/>
-							<div
-								className="Container--row"
-								style={{ width: 200, padding: 10 }}
 							>
-								<p style={{ marginRight: 5, marginBottom: 0 }}>
-									#
-								</p>
-								<input
-									value={inputValue}
-									onChange={(event) => {
-										const text =
-											event.target.value.toUpperCase();
-										setInputValue(text);
-										const pattern = /^([A-F0-9]{6,6})$/;
-										if (pattern.test(text)) {
-											const newColors = [...colors];
-											newColors[showSelector] =
-												"#" + text;
-											setColors(newColors);
-										}
+								<div
+									style={{
+										width: 200,
+										height: 30,
+										background: colors[showSelector],
+										borderRadius: 5,
+										borderWidth: 1,
+										borderStyle: "solid",
+										borderColor: "#AAAAAA",
+										margin: 5,
 									}}
-									className="ClearInput"
 								/>
+								<HexColorPicker
+									color={colors[showSelector]}
+									onChange={(color) => {
+										const newColors = [...colors];
+										newColors[showSelector] =
+											color.toUpperCase();
+										setColors(newColors);
+									}}
+									style={{ margin: "5px 5px 0px 5px" }}
+								/>
+								<div
+									className="Container--row"
+									style={{ width: 200, padding: 10 }}
+								>
+									<p
+										style={{
+											marginRight: 5,
+											marginBottom: 0,
+										}}
+									>
+										#
+									</p>
+									<input
+										value={inputValue}
+										onChange={(event) => {
+											const text =
+												event.target.value.toUpperCase();
+											setInputValue(text);
+											const pattern = /^([A-F0-9]{6,6})$/;
+											if (pattern.test(text)) {
+												const newColors = [...colors];
+												newColors[showSelector] =
+													"#" + text;
+												setColors(newColors);
+											}
+										}}
+										className="ClearInput"
+									/>
+								</div>
 							</div>
 						</div>
-					</div>
-				)}
+					)}
+				</Box>
 			</Modal>
-		</Row>
+		</Grid>
 	);
 }

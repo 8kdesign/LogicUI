@@ -8,6 +8,7 @@
 p {
 	font-family: "Kanit";
 	margin-bottom: 0px;
+	margin-top: 0px;
 }
 
 a {
@@ -122,11 +123,4 @@ a:hover {
 
 .ClearInput:focus {
 	outline: none !important;
-}
-
-/* Bootstrap */
-
-.modal-content {
-	border-width: 0px !important;
-	background: none !important;
 }

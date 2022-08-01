@@ -1,6 +1,11 @@
 import { useState } from "react";
-import { Row, Col } from "react-bootstrap";
-import { Check, Pencil, Plus, Search } from "react-bootstrap-icons";
+import { Grid } from "@mui/material";
+import {
+	CheckRounded,
+	EditRounded,
+	AddRounded,
+	SearchRounded,
+} from "@mui/icons-material";
 
 export default function ComponentPreview({
 	primary,
@@ -13,7 +18,8 @@ export default function ComponentPreview({
 	const [input, setInput] = useState("Text Input");
 
 	return (
-		<Row
+		<Grid
+			container
 			style={{
 				margin: 0,
 				padding: 15,
@@ -22,7 +28,8 @@ export default function ComponentPreview({
 				background: background[0],
 			}}
 		>
-			<Col
+			<Grid
+				item
 				xs={12}
 				style={{
 					padding: "0px 10px",
@@ -37,8 +44,9 @@ export default function ComponentPreview({
 				>
 					Components Preview
 				</p>
-			</Col>
-			<Col
+			</Grid>
+			<Grid
+				item
 				xs={12}
 				style={{
 					display: "flex",
@@ -118,7 +126,9 @@ export default function ComponentPreview({
 							justifyContent: "center",
 						}}
 					>
-						<Check color={primary[1]} size={20} />
+						<CheckRounded
+							sx={{ fontSize: 20, color: primary[1] }}
+						/>
 					</div>
 					<div
 						className="Toggle"
@@ -135,7 +145,7 @@ export default function ComponentPreview({
 							justifyContent: "center",
 						}}
 					>
-						<Pencil size={20} color={primary[3]} />
+						<EditRounded sx={{ fontSize: 27, color: primary[3] }} />
 					</div>
 				</>
 				<>
@@ -184,7 +194,9 @@ export default function ComponentPreview({
 							padding: "5px 10px",
 						}}
 					>
-						<Check color={secondary[3]} size={20} />
+						<CheckRounded
+							sx={{ fontSize: 18, color: secondary[3] }}
+						/>
 						<p
 							style={{
 								marginBottom: 0,
@@ -210,7 +222,9 @@ export default function ComponentPreview({
 							justifyContent: "center",
 						}}
 					>
-						<Plus size={30} color={secondary[3]} />
+						<AddRounded
+							sx={{ fontSize: 27, color: secondary[3] }}
+						/>
 						<p style={{ color: secondary[3], marginBottom: 0 }}>
 							Add New
 						</p>
@@ -263,7 +277,9 @@ export default function ComponentPreview({
 							justifyContent: "center",
 						}}
 					>
-						<Pencil size={15} color={tertiary[3]} />
+						<EditRounded
+							sx={{ fontSize: 20, color: tertiary[3] }}
+						/>
 					</div>
 				</>
 				<>
@@ -357,7 +373,9 @@ export default function ComponentPreview({
 							margin: 10,
 						}}
 					>
-						<Search color={outline[1]} />
+						<SearchRounded
+							sx={{ color: outline[1], fontSize: 17 }}
+						/>
 						<input
 							className="ClearInput"
 							value={input}
@@ -386,7 +404,9 @@ export default function ComponentPreview({
 							margin: 10,
 						}}
 					>
-						<Search color={outline[2]} />
+						<SearchRounded
+							sx={{ color: outline[2], fontSize: 17 }}
+						/>
 						<input
 							className="ClearInput"
 							value={input}
@@ -418,7 +438,7 @@ export default function ComponentPreview({
 						Outlined Button
 					</p>
 				</div>
-			</Col>
-		</Row>
+			</Grid>
+		</Grid>
 	);
 }

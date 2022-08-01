@@ -1,4 +1,4 @@
-import { Files } from "react-bootstrap-icons";
+import { CopyAllRounded } from "@mui/icons-material";
 import { toast } from "react-hot-toast";
 
 export default function ExportCSS({
@@ -161,9 +161,8 @@ export default function ExportCSS({
 		<div>
 			<p style={{ fontSize: 27, marginBottom: 10 }}>
 				Step #1: Add to your CSS file
-				<Files
+				<CopyAllRounded
 					className="Toggle"
-					size={20}
 					style={{ marginLeft: 10 }}
 					onClick={() => {
 						navigator.clipboard.writeText(step1);

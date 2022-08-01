@@ -1,4 +1,4 @@
-import { Files } from "react-bootstrap-icons";
+import { CopyAllRounded } from "@mui/icons-material";
 import { toast } from "react-hot-toast";
 
 export default function ExportCompose({
@@ -211,9 +211,8 @@ export default function ExportCompose({
 		<div>
 			<p style={{ fontSize: 27, marginBottom: 10 }}>
 				Step #1: Add to Color.kt
-				<Files
+				<CopyAllRounded
 					className="Toggle"
-					size={20}
 					style={{ marginLeft: 10 }}
 					onClick={() => {
 						navigator.clipboard.writeText(step1);
@@ -240,9 +239,8 @@ export default function ExportCompose({
 				}}
 			>
 				Step #2: Add to theme in Theme.kt
-				<Files
+				<CopyAllRounded
 					className="Toggle"
-					size={20}
 					style={{ marginLeft: 10 }}
 					onClick={() => {
 						navigator.clipboard.writeText(step2);

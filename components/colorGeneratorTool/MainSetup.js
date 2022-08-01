@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Row, Col } from "react-bootstrap";
+import { Grid } from "@mui/material";
 import MainColorSelector from "./MainColorSelector";
 
 export default function MainSetup({
@@ -62,13 +62,13 @@ export default function MainSetup({
 			<br />
 			<div className="Line--horizontal" />
 			<br />
-			<Row>
-				<Col xs={12} md={4} xl={3}>
+			<Grid container>
+				<Grid item xs={12} md={4} xl={3}>
 					<p style={{ fontSize: 17, marginBottom: 5 }}>
 						Obtain main color from
 					</p>
-				</Col>
-				<Col xs={12} md={8} xl={9}>
+				</Grid>
+				<Grid item xs={12} md={8} xl={9}>
 					<div
 						style={{
 							overflowX: "auto",
@@ -141,8 +141,8 @@ export default function MainSetup({
 							</p>
 						</div>
 					</div>
-				</Col>
-			</Row>
+				</Grid>
+			</Grid>
 		</div>
 	);
 }

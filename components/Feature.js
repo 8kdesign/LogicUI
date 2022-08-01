@@ -1,9 +1,9 @@
-import { Col } from "react-bootstrap";
+import { Grid } from "@mui/material";
 import Image from "next/image";
 
 export default function Feature({ image, header, content }) {
 	return (
-		<Col xs={12} md={6} lg={4} style={{ padding: 20 }}>
+		<Grid item xs={12} md={6} lg={4} style={{ padding: 20 }}>
 			<div
 				style={{
 					background: "#FAFAFA",
@@ -35,6 +35,6 @@ export default function Feature({ image, header, content }) {
 					</p>
 				</div>
 			</div>
-		</Col>
+		</Grid>
 	);
 }

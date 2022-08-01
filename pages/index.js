@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Col, Row, Container, Badge } from "react-bootstrap";
+import { Container, Grid } from "@mui/material";
 import Link from "next/link";
 
 import ImageLMPLogo from "../assets/logicui/lmp/logo.jpg";
@@ -46,9 +46,9 @@ export default function LogicUI() {
 				<div className="Container--space-between">
 					<p style={{ marginLeft: 20, fontSize: 27 }}>Android Apps</p>
 				</div>
-				<Row style={{ margin: 0 }}>
+				<Grid container style={{ margin: 0 }}>
 					<AppContent />
-				</Row>
+				</Grid>
 				<br />
 				<div className="Line--horizontal" />
 				<br />
@@ -57,9 +57,9 @@ export default function LogicUI() {
 						Tools by LogicUI
 					</p>
 				</div>
-				<Row style={{ margin: 0 }}>
+				<Grid container style={{ margin: 0 }}>
 					<ToolContent />
-				</Row>
+				</Grid>
 			</Container>
 		</>
 	);
@@ -69,7 +69,14 @@ function AppContent() {
 	const array = [];
 	apps.forEach((app) => {
 		array.push(
-			<Col xs={12} md={6} lg={4} style={{ padding: 0 }} key={app.name}>
+			<Grid
+				item
+				xs={12}
+				md={6}
+				lg={4}
+				style={{ padding: 0 }}
+				key={app.name}
+			>
 				<Link href={app.codename}>
 					<div
 						className="Toggle"
@@ -112,18 +119,19 @@ function AppContent() {
 								</p>
 								<div>
 									{app.installs !== undefined ? (
-										<Badge
-											bg="warning"
-											text="dark"
+										<p
 											style={{
+												width: "fit-content",
 												fontSize: 13,
 												fontWeight: 500,
 												borderRadius: 20,
 												marginBottom: 10,
+												padding: "5px 15px",
+												background: "#f5b342",
 											}}
 										>
 											{app.installs}
-										</Badge>
+										</p>
 									) : null}
 								</div>
 								<p
@@ -139,7 +147,7 @@ function AppContent() {
 						</div>
 					</div>
 				</Link>
-			</Col>
+			</Grid>
 		);
 	});
 	return array;
@@ -149,7 +157,14 @@ function ToolContent() {
 	const array = [];
 	tools.forEach((tool) => {
 		array.push(
-			<Col xs={12} md={6} lg={4} style={{ padding: 0 }} key={tool.name}>
+			<Grid
+				item
+				xs={12}
+				md={6}
+				lg={4}
+				style={{ padding: 0 }}
+				key={tool.name}
+			>
 				<Link href={tool.codename}>
 					<div
 						className="Toggle"
@@ -188,7 +203,7 @@ function ToolContent() {
 						</div>
 					</div>
 				</Link>
-			</Col>
+			</Grid>
 		);
 	});
 	return array;

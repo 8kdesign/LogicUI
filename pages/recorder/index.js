@@ -1,4 +1,4 @@
-import { Container, Row } from "react-bootstrap";
+import { Container, Grid } from "@mui/material";
 import AppHeader from "../../components/AppHeader";
 import Feature from "../../components/Feature";
 import { apps } from "../index";
@@ -11,7 +11,7 @@ export default function Recorder() {
 	return (
 		<Container>
 			<AppHeader app={apps[3]} />
-			<Row>
+			<Grid container>
 				<Feature
 					image={Image1}
 					header="Bluetooth Support"
@@ -27,7 +27,7 @@ export default function Recorder() {
 					header="Quick Cancel"
 					content="Made a mistake in your recording? Cancel the recording without saving."
 				/>
-			</Row>
+			</Grid>
 			<br />
 		</Container>
 	);

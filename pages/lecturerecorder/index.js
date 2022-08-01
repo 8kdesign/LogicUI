@@ -1,4 +1,4 @@
-import { Container, Row } from "react-bootstrap";
+import { Container, Grid } from "@mui/material";
 import AppHeader from "../../components/AppHeader";
 import Feature from "../../components/Feature";
 import { apps } from "../index";
@@ -9,13 +9,13 @@ export default function LectureRecorder() {
 	return (
 		<Container>
 			<AppHeader app={apps[4]} />
-			<Row>
+			<Grid container>
 				<Feature
 					image={Image1}
 					header="Picture-in-Picture Support"
 					content="Record and playback videos/audios in picture-in-picture mode while you use other apps concurrently."
 				/>
-			</Row>
+			</Grid>
 			<br />
 		</Container>
 	);
