@@ -207,6 +207,21 @@ export default function ExportCompose({
 		"    outline = OutlineDark\n" +
 		")";
 
+	const step3 =
+		"@Composable\n" +
+		"fun AppTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {\n" +
+		"    androidx.compose.material3.MaterialTheme(\n" +
+		"        colorScheme = if (darkTheme) {\n" +
+		"            darkColorScheme\n" +
+		"        } else {\n" +
+		"            lightColorScheme\n" +
+		"        },\n" +
+		"        typography = Typography,\n" +
+		"        shapes = Shapes,\n" +
+		"        content = content\n" +
+		"    )\n" +
+		"}";
+
 	return (
 		<div>
 			<p style={{ fontSize: 27, marginBottom: 10 }}>
@@ -238,7 +253,7 @@ export default function ExportCompose({
 					marginTop: 40,
 				}}
 			>
-				Step #2: Add to theme in Theme.kt
+				Step #2: Add to Theme.kt
 				<CopyAllRounded
 					className="Toggle"
 					style={{ marginLeft: 10 }}
@@ -258,6 +273,31 @@ export default function ExportCompose({
 				}}
 			>
 				<p style={{ marginBottom: 0 }}>{step2}</p>
+			</div>
+			<p
+				style={{
+					fontSize: 27,
+					marginBottom: 10,
+					marginTop: 40,
+				}}
+			>
+				{"Step #3: Use color schemes in MaterialTheme()"}
+			</p>
+			<div
+				style={{
+					background: "#454C4F",
+					overflowX: "auto",
+					borderRadius: 10,
+					padding: 20,
+					whiteSpace: "pre",
+				}}
+			>
+				<p style={{ fontSize: 21, fontWeight: 500, color: "white" }}>
+					Sample Code
+				</p>
+				<p style={{ marginBottom: 0, fontWeight: 300, color: "white" }}>
+					{step3}
+				</p>
 			</div>
 		</div>
 	);

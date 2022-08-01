@@ -162,6 +162,16 @@ export default function ExportFlutter({
 		"),\n" +
 		");";
 
+	const step2 =
+		"@override\n" +
+		"Widget build(BuildContext context) {\n" +
+		"    return MaterialApp(\n" +
+		"        theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),\n" +
+		"        darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),\n" +
+		"        home: const Home(),\n" +
+		"    );\n" +
+		"}";
+
 	return (
 		<div>
 			<p style={{ fontSize: 27, marginBottom: 10 }}>
@@ -185,6 +195,31 @@ export default function ExportFlutter({
 				}}
 			>
 				<p style={{ marginBottom: 0 }}>{step1}</p>
+			</div>
+			<p
+				style={{
+					fontSize: 27,
+					marginBottom: 10,
+					marginTop: 40,
+				}}
+			>
+				{"Step #2: Use color schemes in MaterialApp()"}
+			</p>
+			<div
+				style={{
+					background: "#454C4F",
+					overflowX: "auto",
+					borderRadius: 10,
+					padding: 20,
+					whiteSpace: "pre",
+				}}
+			>
+				<p style={{ fontSize: 21, fontWeight: 500, color: "white" }}>
+					Sample Code
+				</p>
+				<p style={{ marginBottom: 0, fontWeight: 300, color: "white" }}>
+					{step2}
+				</p>
 			</div>
 		</div>
 	);
