@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ExportCompose from "./ExportCompose";
 import ExportCSS from "./ExportCSS";
+import ExportFlutter from "./ExportFlutter";
 import ExportManual from "./ExportManual";
 import ExportXML from "./ExportXML";
 
@@ -101,7 +102,7 @@ export default function Export({
 			}
 			case 2: {
 				return (
-					<ExportCSS
+					<ExportFlutter
 						primary={primary}
 						secondary={secondary}
 						tertiary={tertiary}
@@ -118,6 +119,24 @@ export default function Export({
 				);
 			}
 			case 3: {
+				return (
+					<ExportCSS
+						primary={primary}
+						secondary={secondary}
+						tertiary={tertiary}
+						error={error}
+						background={background}
+						outline={outline}
+						primaryDark={primaryDark}
+						secondaryDark={secondaryDark}
+						tertiaryDark={tertiaryDark}
+						errorDark={errorDark}
+						backgroundDark={backgroundDark}
+						outlineDark={outlineDark}
+					/>
+				);
+			}
+			case 4: {
 				return (
 					<ExportManual
 						primary={primary}
@@ -166,4 +185,4 @@ export default function Export({
 	);
 }
 
-const modes = ["XML", "Compose", "CSS", "Manual"];
+const modes = ["XML", "Compose", "Flutter", "CSS", "Manual"];
