@@ -39,7 +39,7 @@ export default function LogicUI() {
 				/>
 				<meta
 					property="og:image"
-					content="https://firebasestorage.googleapis.com/v0/b/logicui-9667a.appspot.com/o/others%2FBanner.png?alt=media&token=4eb70d41-f800-423a-93b2-9c0608f82f76"
+					content="https://firebasestorage.googleapis.com/v0/b/logicui-9667a.appspot.com/o/others%2FBanner.png?alt=media&token=b11c779e-a89f-4c3d-a336-c11608b23703"
 				/>
 			</Head>
 			<Container style={{ paddingTop: 50, paddingBottom: 50 }}>
