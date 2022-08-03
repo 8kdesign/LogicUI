@@ -37,10 +37,10 @@ export default function LogicUI() {
 					property="og:description"
 					content="Apps and concepts by LogicUI"
 				/>
-				{/* <meta
+				<meta
 					property="og:image"
-					content="https://firebasestorage.googleapis.com/v0/b/logicui-9667a.appspot.com/o/others%2Flogicui_banner.png?alt=media&token=506832a0-2425-4125-b0b8-13e3e8266dff"
-				/> */}
+					content="https://firebasestorage.googleapis.com/v0/b/logicui-9667a.appspot.com/o/others%2FBanner.png?alt=media&token=4eb70d41-f800-423a-93b2-9c0608f82f76"
+				/>
 			</Head>
 			<Container style={{ paddingTop: 50, paddingBottom: 50 }}>
 				<div className="Container--space-between">
@@ -227,7 +227,7 @@ export const apps = [
 		name: "Screenshot Framer",
 		description:
 			"Add a frame around your screenshot the easy way! Screenshot Framer intelligently adds a frame around your screenshots without skewing or cropping it.",
-		installs: "500+ Installs",
+		installs: "1K+ Installs",
 		link: "https://play.google.com/store/apps/details?id=com.logicui.screenshotframer",
 	},
 	{
